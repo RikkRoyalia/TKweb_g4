@@ -3,90 +3,244 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechStore - Danh mục sản phẩm</title>
+    <title>TechStore - Danh mục sản phẩm chi tiết</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom scrollbar cho đẹp gọn */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+    </style>
   </head>
-  <body class="bg-gray-50 text-gray-800">
-    <header class="bg-white border-b border-gray-200">
+  <body class="bg-[#f8f9fa] text-[#333333] font-sans">
+    <header class="bg-white border-b border-[#e5e7eb]">
       <div
-        class="max-w-[1200px] mx-auto flex items-center justify-between py-4 px-4"
+        class="w-[1200px] mx-auto flex items-center justify-between h-[80px] px-4"
       >
-        <div class="text-2xl font-bold text-blue-800">TechStore</div>
-        <div class="flex-1 max-w-xl mx-8 relative">
+        <div class="text-[24px] font-bold text-[#1e3a8a] w-[200px]">
+          TechStore
+        </div>
+
+        <div class="flex-1 max-w-[600px] relative">
           <input
             type="text"
             placeholder="Tìm kiếm sản phẩm..."
-            class="w-full bg-gray-100 border border-gray-300 rounded-full py-2 px-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="w-full h-[40px] bg-[#f3f4f6] border border-[#d1d5db] rounded-full px-[20px] text-[14px] focus:outline-none focus:border-[#3b82f6]"
           />
         </div>
-        <div class="flex items-center space-x-6 text-gray-600">
-          <a href="#" class="hover:text-blue-600">Đăng nhập</a>
-          <a href="#" class="hover:text-blue-600">Yêu thích</a>
-          <a href="#" class="hover:text-blue-600">Giỏ hàng</a>
+
+        <div
+          class="flex items-center gap-[24px] w-[200px] justify-end text-[14px] font-medium text-[#4b5563]"
+        >
+          <a href="#" class="hover:text-[#2563eb]">Đăng nhập</a>
+          <a href="#" class="hover:text-[#2563eb]">Yêu thích</a>
+          <a href="#" class="hover:text-[#2563eb]">Giỏ hàng</a>
         </div>
       </div>
+
       <nav
-        class="max-w-[1200px] mx-auto flex space-x-8 py-3 px-4 text-sm font-medium"
+        class="w-[1200px] mx-auto h-[44px] flex items-center gap-[32px] px-4 text-[14px] font-medium text-[#4b5563]"
       >
-        <a href="#" class="hover:text-blue-600">Tất cả danh mục</a>
-        <a href="#" class="text-blue-600 border-b-2 border-blue-600 pb-1"
+        <a href="#" class="hover:text-[#2563eb]">Tất cả danh mục</a>
+        <a
+          href="#"
+          class="text-[#2563eb] h-full flex items-center border-b-2 border-[#2563eb]"
           >Trang chủ</a
         >
-        <a href="#" class="hover:text-blue-600">Sản phẩm</a>
-        <a href="#" class="hover:text-blue-600">Liên hệ</a>
+        <a href="#" class="hover:text-[#2563eb]">Sản phẩm</a>
+        <a href="#" class="hover:text-[#2563eb]">Liên hệ</a>
       </nav>
     </header>
 
-    <main class="max-w-[1200px] mx-auto px-4 py-6">
-      <div class="text-sm text-gray-500 mb-6">
-        Trang chủ > Danh mục sản phẩm >
-        <span class="text-gray-800 font-medium">Điện thoại</span>
+    <main class="w-[1200px] mx-auto px-4 py-[24px]">
+      <div class="text-[13px] text-[#6b7280] mb-[24px]">
+        Trang chủ <span class="mx-2">></span
+        ><span class="text-[#111827] font-medium">Danh mục sản phẩm</span>
       </div>
 
-      <div class="grid grid-cols-3 gap-8">
-        <script>
-          for (let i = 0; i < 12; i++) {
-            document.write(`
-                    <div class="bg-white p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition">
-                        <div class="w-full h-[250px] bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-400">[Ảnh sản phẩm]</div>
-                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Tên sản phẩm ${i + 1}</h3>
-                        <p class="text-sm text-gray-500 mb-2">Mô tả ngắn gọn về cấu hình hoặc đặc điểm nổi bật của sản phẩm.</p>
-                        <div class="text-red-600 font-bold text-lg mb-4">25.000.000 ₫</div>
-                        <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Thêm vào giỏ</button>
-                    </div>
-                    `);
-          }
-        </script>
+      <div class="flex gap-[32px]">
+        <aside class="w-[260px] flex-shrink-0">
+          <div
+            class="bg-white p-[20px] border border-[#e5e7eb] rounded-[8px] mb-[20px]"
+          >
+            <h3 class="font-bold text-[16px] text-[#111827] mb-[16px]">
+              Danh mục
+            </h3>
+            <ul class="flex flex-col gap-[12px] text-[14px] text-[#4b5563]">
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input type="checkbox" class="w-[16px] h-[16px]" checked />
+                  Điện thoại</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input type="checkbox" class="w-[16px] h-[16px]" />
+                  Laptop</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input type="checkbox" class="w-[16px] h-[16px]" /> Máy tính
+                  bảng</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input type="checkbox" class="w-[16px] h-[16px]" /> Đồng hồ
+                  thông minh</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input type="checkbox" class="w-[16px] h-[16px]" /> Phụ
+                  kiện</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white p-[20px] border border-[#e5e7eb] rounded-[8px] mb-[20px]"
+          >
+            <h3 class="font-bold text-[16px] text-[#111827] mb-[16px]">
+              Mức giá
+            </h3>
+            <ul class="flex flex-col gap-[12px] text-[14px] text-[#4b5563]">
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input type="radio" name="price" class="w-[16px] h-[16px]" />
+                  Dưới 5 triệu</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input type="radio" name="price" class="w-[16px] h-[16px]" />
+                  Từ 5 - 10 triệu</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input type="radio" name="price" class="w-[16px] h-[16px]" />
+                  Từ 10 - 20 triệu</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input type="radio" name="price" class="w-[16px] h-[16px]" />
+                  Trên 20 triệu</label
+                >
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="flex-1">
+          <div class="grid grid-cols-3 gap-[24px]">
+            <script>
+              // Theo wireframe có khoảng 9-12 khối sản phẩm
+              for (let i = 0; i < 9; i++) {
+                document.write(`
+                            <div class="bg-white p-[16px] border border-[#e5e7eb] rounded-[8px] flex flex-col">
+                                <div class="w-full h-[220px] bg-[#e5e7eb] rounded-[4px] mb-[16px] flex items-center justify-center text-[12px] text-[#9ca3af]">
+                                    220 x 220 px
+                                </div>
+                                <h3 class="font-semibold text-[15px] text-[#1f2937] leading-[22px] mb-[4px] line-clamp-2">Điện thoại thông minh Mẫu số ${i + 1}</h3>
+                                <p class="text-[12px] text-[#6b7280] mb-[12px]">RAM 8GB | ROM 256GB</p>
+                                <div class="mt-auto">
+                                    <div class="text-[#dc2626] font-bold text-[18px] mb-[16px]">15.990.000 ₫</div>
+                                    <button class="w-full h-[36px] bg-white border border-[#2563eb] text-[#2563eb] text-[14px] font-medium rounded-[4px] hover:bg-[#2563eb] hover:text-white transition-colors">
+                                        Thêm giỏ hàng
+                                    </button>
+                                </div>
+                            </div>
+                            `);
+              }
+            </script>
+          </div>
+
+          <div class="flex justify-center items-center gap-[8px] mt-[40px]">
+            <button
+              class="w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6]"
+            >
+              <
+            </button>
+            <button
+              class="w-[36px] h-[36px] bg-[#2563eb] text-white rounded-[4px] flex items-center justify-center"
+            >
+              1
+            </button>
+            <button
+              class="w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6]"
+            >
+              2
+            </button>
+            <button
+              class="w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6]"
+            >
+              3
+            </button>
+            <span class="text-[#6b7280]">...</span>
+            <button
+              class="w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6]"
+            >
+              >
+            </button>
+          </div>
+        </div>
       </div>
     </main>
 
-    <footer class="bg-white border-t border-gray-200 mt-12 py-12">
-      <div class="max-w-[1200px] mx-auto px-4 grid grid-cols-4 gap-8">
+    <footer class="bg-white border-t border-[#e5e7eb] mt-[60px] py-[40px]">
+      <div class="w-[1200px] mx-auto px-4 grid grid-cols-4 gap-[32px]">
         <div>
-          <h4 class="font-bold text-blue-800 mb-4 text-xl">TechStore</h4>
-          <p class="text-sm text-gray-500">
+          <h4 class="font-bold text-[#1e3a8a] text-[20px] mb-[16px]">
+            TechStore
+          </h4>
+          <p class="text-[13px] text-[#6b7280] leading-[22px]">
             Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.
           </p>
         </div>
         <div>
-          <h4 class="font-bold mb-4">Thông tin</h4>
-          <ul class="text-sm text-gray-500 space-y-2">
-            <li><a href="#">Giới thiệu</a></li>
-            <li><a href="#">Tuyển dụng</a></li>
-            <li><a href="#">Chính sách bảo mật</a></li>
+          <h4 class="font-bold text-[15px] text-[#111827] mb-[16px]">
+            Thông tin
+          </h4>
+          <ul class="text-[13px] text-[#4b5563] flex flex-col gap-[10px]">
+            <li><a href="#" class="hover:text-[#2563eb]">Giới thiệu</a></li>
+            <li><a href="#" class="hover:text-[#2563eb]">Tuyển dụng</a></li>
+            <li>
+              <a href="#" class="hover:text-[#2563eb]">Chính sách bảo mật</a>
+            </li>
           </ul>
         </div>
         <div>
-          <h4 class="font-bold mb-4">Hỗ trợ khách hàng</h4>
-          <ul class="text-sm text-gray-500 space-y-2">
-            <li><a href="#">Hướng dẫn mua hàng</a></li>
-            <li><a href="#">Chính sách đổi trả</a></li>
-            <li><a href="#">Chính sách bảo hành</a></li>
+          <h4 class="font-bold text-[15px] text-[#111827] mb-[16px]">
+            Hỗ trợ khách hàng
+          </h4>
+          <ul class="text-[13px] text-[#4b5563] flex flex-col gap-[10px]">
+            <li>
+              <a href="#" class="hover:text-[#2563eb]">Hướng dẫn mua hàng</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#2563eb]">Chính sách đổi trả</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#2563eb]">Chính sách bảo hành</a>
+            </li>
           </ul>
         </div>
         <div>
-          <h4 class="font-bold mb-4">Liên hệ</h4>
-          <ul class="text-sm text-gray-500 space-y-2">
+          <h4 class="font-bold text-[15px] text-[#111827] mb-[16px]">
+            Liên hệ
+          </h4>
+          <ul class="text-[13px] text-[#4b5563] flex flex-col gap-[10px]">
             <li>Hotline: 1900 xxxx</li>
             <li>Email: cskh@techstore.vn</li>
             <li>Hà Nội, Việt Nam</li>
