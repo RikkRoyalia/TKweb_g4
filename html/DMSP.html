@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechStore - Danh mục sản phẩm chi tiết</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/danhmuc.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body class="bg-[#f8f9fa] text-[#333333] font-sans">
+    <header class="site-header">
+      <div class="top-header container-custom">
+        <div class="logo">TechStore</div>
+
+        <div class="search-box">
+          <input type="text" placeholder="Tìm kiếm sản phẩm" />
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="header-actions">
+          <a href="#" class="header-action">
+            <i class="fa-regular fa-user"></i>
+            <span>Đăng nhập</span>
+          </a>
+          <a href="#" class="header-action">
+            <i class="fa-regular fa-heart"></i>
+            <span>Yêu thích</span>
+          </a>
+          <a href="cart.html" class="header-action">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Giỏ hàng</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <div class="container-custom nav-inner">
+          <a href="DMSP.HTML">Tất cả danh mục</a>
+          <a href="index.html">Trang chủ</a>
+          <a href="DMSP.HTML" class="active">Sản phẩm</a>
+          <a href="#">Liên hệ</a>
+        </div>
+      </nav>
+    </header>
+    <main class="w-[1200px] mx-auto px-4 py-[24px]">
+      <div class="text-[13px] text-[#6b7280] mb-[24px]">
+        Trang chủ <span class="mx-2">></span
+        ><span class="text-[#111827] font-medium">Danh mục sản phẩm</span>
+      </div>
+
+      <div class="flex gap-[32px]">
+        <aside class="w-[260px] flex-shrink-0">
+          <div
+            class="bg-white p-[20px] border border-[#e5e7eb] rounded-[8px] mb-[20px]"
+          >
+            <h3 class="font-bold text-[16px] text-[#111827] mb-[16px]">
+              Danh mục
+            </h3>
+            <ul class="flex flex-col gap-[12px] text-[14px] text-[#4b5563]">
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    value="dienthoai"
+                    class="w-[16px] h-[16px] filter-checkbox"
+                    checked
+                  />
+                  Điện thoại</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    value="laptop"
+                    class="w-[16px] h-[16px] filter-checkbox"
+                  />
+                  Laptop</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    value="tablet"
+                    class="w-[16px] h-[16px] filter-checkbox"
+                  />
+                  Máy tính bảng</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    value="smartwatch"
+                    class="w-[16px] h-[16px] filter-checkbox"
+                  />
+                  Đồng hồ thông minh</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    value="phukien"
+                    class="w-[16px] h-[16px] filter-checkbox"
+                  />
+                  Phụ kiện</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white p-[20px] border border-[#e5e7eb] rounded-[8px] mb-[20px]"
+          >
+            <h3 class="font-bold text-[16px] text-[#111827] mb-[16px]">
+              Mức giá
+            </h3>
+            <ul class="flex flex-col gap-[12px] text-[14px] text-[#4b5563]">
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="radio"
+                    name="price"
+                    value="all"
+                    class="w-[16px] h-[16px] filter-radio"
+                    checked
+                  />
+                  Tất cả mức giá</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="radio"
+                    name="price"
+                    value="under5"
+                    class="w-[16px] h-[16px] filter-radio"
+                  />
+                  Dưới 5 triệu</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="radio"
+                    name="price"
+                    value="5to10"
+                    class="w-[16px] h-[16px] filter-radio"
+                  />
+                  Từ 5 - 10 triệu</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="radio"
+                    name="price"
+                    value="10to20"
+                    class="w-[16px] h-[16px] filter-radio"
+                  />
+                  Từ 10 - 20 triệu</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="radio"
+                    name="price"
+                    value="over20"
+                    class="w-[16px] h-[16px] filter-radio"
+                  />
+                  Trên 20 triệu</label
+                >
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="flex-1 flex flex-col">
+          <div id="product-grid" class="grid grid-cols-3 gap-[24px]"></div>
+
+          <div
+            id="pagination"
+            class="flex justify-center items-center gap-[8px] mt-[40px] w-full"
+          ></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-white border-t border-[#e5e7eb] mt-[60px] py-[40px]">
+      <div class="w-[1200px] mx-auto px-4 grid grid-cols-4 gap-[32px]">
+        <div>
+          <h4 class="font-bold text-[#1e3a8a] text-[20px] mb-[16px]">
+            TechStore
+          </h4>
+          <p class="text-[13px] text-[#6b7280] leading-[22px]">
+            Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-bold text-[15px] text-[#111827] mb-[16px]">
+            Thông tin
+          </h4>
+          <ul class="text-[13px] text-[#4b5563] flex flex-col gap-[10px]">
+            <li><a href="#" class="hover:text-[#2563eb]">Giới thiệu</a></li>
+            <li><a href="#" class="hover:text-[#2563eb]">Tuyển dụng</a></li>
+            <li>
+              <a href="#" class="hover:text-[#2563eb]">Chính sách bảo mật</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-[15px] text-[#111827] mb-[16px]">
+            Hỗ trợ khách hàng
+          </h4>
+          <ul class="text-[13px] text-[#4b5563] flex flex-col gap-[10px]">
+            <li>
+              <a href="#" class="hover:text-[#2563eb]">Hướng dẫn mua hàng</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#2563eb]">Chính sách đổi trả</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#2563eb]">Chính sách bảo hành</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-[15px] text-[#111827] mb-[16px]">
+            Liên hệ
+          </h4>
+          <ul class="text-[13px] text-[#4b5563] flex flex-col gap-[10px]">
+            <li>Hotline: 1900 xxxx</li>
+            <li>Email: cskh@techstore.vn</li>
+            <li>Hà Nội, Việt Nam</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="common.js"></script>
+  </body>
+</html>
