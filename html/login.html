@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TechStore - Đăng nhập</title>
+    <link rel="stylesheet" href="../css/auth.css" />
+    <script src="../js/auth.js"></script>
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="auth-box">
+        <h2 class="auth-logo">TechStore</h2>
+        <p class="auth-subtitle">Vui lòng đăng nhập để tiếp tục</p>
+
+        <form id="login-form">
+          <div class="input-group">
+            <label>Tên đăng nhập</label>
+            <input type="text" id="login-username" required />
+          </div>
+          <div class="input-group">
+            <label>Mật khẩu</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <button type="submit" class="auth-btn">Đăng nhập</button>
+        </form>
+
+        <p id="login-msg" class="msg"></p>
+
+        <div class="auth-link">
+          Chưa có tài khoản? <a href="register.html">Đăng ký tại đây</a>
+        </div>
+      </div>
+    </div>
+    <script src="../js/login.js"></script>
+  </body>
+</html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechStore - Danh mục sản phẩm chi tiết</title>
+
+    <script src="../js/auth.js"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       /* Custom scrollbar cho đẹp gọn */
@@ -20,83 +23,213 @@
     </style>
   </head>
   <body class="bg-[#f8f9fa] text-[#333333] font-sans">
-<header class="bg-white border-b border-[#e5e7eb] pt-[20px]">
-      <div class="w-[1200px] mx-auto flex items-center justify-between pb-[20px] px-4 sm:px-0">
-        
-        <div class="text-[24px] font-[800] text-[#1d4ed8]">
+    <header class="bg-white border-b border-[#e5e7eb] pt-[20px]">
+      <div
+        class="w-[1200px] mx-auto flex items-center justify-between pb-[20px] px-4 sm:px-0"
+      >
+        <a href="index.html" class="text-[28px] font-[800] text-[#1d4ed8]">
           TechStore
-        </div>
+        </a>
 
-        <div class="flex bg-[#f3f4f6] rounded-[20px] px-[16px] py-[8px] w-[400px]">
+        <div
+          class="flex bg-[#f3f4f6] rounded-full px-[24px] py-[12px] w-[500px]"
+        >
           <input
             type="text"
             placeholder="Tìm kiếm sản phẩm"
             class="border-none bg-transparent outline-none flex-1 text-[14px] text-[#1f2937]"
           />
-          <button class="border-none bg-transparent cursor-pointer">🔍</button>
+          <button
+            class="border-none bg-transparent cursor-pointer text-[#6b7280] hover:text-[#1d4ed8]"
+          >
+            🔍
+          </button>
         </div>
 
-        <div class="flex gap-[24px]">
-          <div class="flex flex-col items-center text-[12px] text-[#1f2937] cursor-pointer hover:text-[#2563eb]">
-            <span class="text-[18px] mb-[4px]">👤</span>
-            <span>Đăng nhập</span>
+        <div class="flex items-start gap-[40px]">
+          <div id="auth-area">
+            <a
+              href="login.html"
+              class="flex flex-col items-center text-[13px] text-[#1f2937] hover:text-[#2563eb] transition-colors"
+            >
+              <span class="text-[22px] mb-[4px]">👤</span>
+              <span class="font-medium whitespace-nowrap">Đăng nhập</span>
+            </a>
           </div>
-          <div class="flex flex-col items-center text-[12px] text-[#1f2937] cursor-pointer hover:text-[#2563eb]">
-            <span class="text-[18px] mb-[4px]">🤍</span>
-            <span>Yêu thích</span>
+
+          <div
+            class="flex flex-col items-center text-[13px] text-[#1f2937] cursor-pointer hover:text-[#2563eb] transition-colors"
+          >
+            <span class="text-[22px] mb-[4px]">🤍</span>
+            <span class="font-medium whitespace-nowrap">Yêu thích</span>
           </div>
-          <a href="cart.html" class="flex flex-col items-center text-[12px] text-[#1f2937] cursor-pointer hover:text-[#2563eb]">
-            <span class="text-[18px] mb-[4px]">🛒</span>
-            <span>Giỏ hàng</span>
+
+          <a
+            href="cart.html"
+            class="flex flex-col items-center text-[13px] text-[#1f2937] hover:text-[#2563eb] transition-colors"
+          >
+            <span class="text-[22px] mb-[4px]">🛒</span>
+            <span class="font-medium whitespace-nowrap">Giỏ hàng</span>
           </a>
         </div>
       </div>
 
-      <nav class="w-[1200px] mx-auto flex gap-[32px] py-[16px] px-4 sm:px-0 text-[14px] font-[600] text-[#1f2937]">
-        <a href="danhmuc.html" class="hover:text-[#2563eb]">Tất cả danh mục</a>
-        <a href="index.html" class="hover:text-[#2563eb]">Trang chủ</a>
+      <nav
+        class="w-[1200px] mx-auto flex justify-center gap-[48px] py-[16px] px-4 sm:px-0 text-[15px] font-[600] text-[#4b5563] border-t border-[#f3f4f6]"
+      >
+        <a href="danhmuc.html" class="hover:text-[#2563eb] transition-colors"
+          >Tất cả danh mục</a
+        >
+        <a href="index.html" class="hover:text-[#2563eb] transition-colors"
+          >Trang chủ</a
+        >
         <a href="danhmuc.html" class="text-[#2563eb]">Sản phẩm</a>
-        <a href="#" class="hover:text-[#2563eb]">Liên hệ</a>
+        <a href="#" class="hover:text-[#2563eb] transition-colors">Liên hệ</a>
       </nav>
     </header>
-    <main class="w-[1200px] mx-auto px-4 py-[24px]">                                                                                                  
+    <main class="w-[1200px] mx-auto px-4 py-[24px]">
       <div class="text-[13px] text-[#6b7280] mb-[24px]">
-        Trang chủ <span class="mx-2">></span><span class="text-[#111827] font-medium">Danh mục sản phẩm</span>
+        Trang chủ <span class="mx-2">></span
+        ><span class="text-[#111827] font-medium">Danh mục sản phẩm</span>
       </div>
 
       <div class="flex gap-[32px]">
         <aside class="w-[260px] flex-shrink-0">
-          <div class="bg-white p-[20px] border border-[#e5e7eb] rounded-[8px] mb-[20px]">
-            <h3 class="font-bold text-[16px] text-[#111827] mb-[16px]">Danh mục</h3>
+          <div
+            class="bg-white p-[20px] border border-[#e5e7eb] rounded-[8px] mb-[20px]"
+          >
+            <h3 class="font-bold text-[16px] text-[#111827] mb-[16px]">
+              Danh mục
+            </h3>
             <ul class="flex flex-col gap-[12px] text-[14px] text-[#4b5563]">
-              <li><label class="flex items-center gap-[8px] cursor-pointer"><input type="checkbox" value="dienthoai" class="w-[16px] h-[16px] filter-checkbox" checked /> Điện thoại</label></li>
-              <li><label class="flex items-center gap-[8px] cursor-pointer"><input type="checkbox" value="laptop" class="w-[16px] h-[16px] filter-checkbox" /> Laptop</label></li>
-              <li><label class="flex items-center gap-[8px] cursor-pointer"><input type="checkbox" value="tablet" class="w-[16px] h-[16px] filter-checkbox" /> Máy tính bảng</label></li>
-              <li><label class="flex items-center gap-[8px] cursor-pointer"><input type="checkbox" value="smartwatch" class="w-[16px] h-[16px] filter-checkbox" /> Đồng hồ thông minh</label></li>
-              <li><label class="flex items-center gap-[8px] cursor-pointer"><input type="checkbox" value="phukien" class="w-[16px] h-[16px] filter-checkbox" /> Phụ kiện</label></li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    value="dienthoai"
+                    class="w-[16px] h-[16px] filter-checkbox"
+                    checked
+                  />
+                  Điện thoại</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    value="laptop"
+                    class="w-[16px] h-[16px] filter-checkbox"
+                  />
+                  Laptop</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    value="tablet"
+                    class="w-[16px] h-[16px] filter-checkbox"
+                  />
+                  Máy tính bảng</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    value="smartwatch"
+                    class="w-[16px] h-[16px] filter-checkbox"
+                  />
+                  Đồng hồ thông minh</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    value="phukien"
+                    class="w-[16px] h-[16px] filter-checkbox"
+                  />
+                  Phụ kiện</label
+                >
+              </li>
             </ul>
           </div>
 
-          <div class="bg-white p-[20px] border border-[#e5e7eb] rounded-[8px] mb-[20px]">
-            <h3 class="font-bold text-[16px] text-[#111827] mb-[16px]">Mức giá</h3>
+          <div
+            class="bg-white p-[20px] border border-[#e5e7eb] rounded-[8px] mb-[20px]"
+          >
+            <h3 class="font-bold text-[16px] text-[#111827] mb-[16px]">
+              Mức giá
+            </h3>
             <ul class="flex flex-col gap-[12px] text-[14px] text-[#4b5563]">
-              <li><label class="flex items-center gap-[8px] cursor-pointer"><input type="radio" name="price" value="all" class="w-[16px] h-[16px] filter-radio" checked /> Tất cả mức giá</label></li>
-              <li><label class="flex items-center gap-[8px] cursor-pointer"><input type="radio" name="price" value="under5" class="w-[16px] h-[16px] filter-radio" /> Dưới 5 triệu</label></li>
-              <li><label class="flex items-center gap-[8px] cursor-pointer"><input type="radio" name="price" value="5to10" class="w-[16px] h-[16px] filter-radio" /> Từ 5 - 10 triệu</label></li>
-              <li><label class="flex items-center gap-[8px] cursor-pointer"><input type="radio" name="price" value="10to20" class="w-[16px] h-[16px] filter-radio" /> Từ 10 - 20 triệu</label></li>
-              <li><label class="flex items-center gap-[8px] cursor-pointer"><input type="radio" name="price" value="over20" class="w-[16px] h-[16px] filter-radio" /> Trên 20 triệu</label></li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="radio"
+                    name="price"
+                    value="all"
+                    class="w-[16px] h-[16px] filter-radio"
+                    checked
+                  />
+                  Tất cả mức giá</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="radio"
+                    name="price"
+                    value="under5"
+                    class="w-[16px] h-[16px] filter-radio"
+                  />
+                  Dưới 5 triệu</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="radio"
+                    name="price"
+                    value="5to10"
+                    class="w-[16px] h-[16px] filter-radio"
+                  />
+                  Từ 5 - 10 triệu</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="radio"
+                    name="price"
+                    value="10to20"
+                    class="w-[16px] h-[16px] filter-radio"
+                  />
+                  Từ 10 - 20 triệu</label
+                >
+              </li>
+              <li>
+                <label class="flex items-center gap-[8px] cursor-pointer"
+                  ><input
+                    type="radio"
+                    name="price"
+                    value="over20"
+                    class="w-[16px] h-[16px] filter-radio"
+                  />
+                  Trên 20 triệu</label
+                >
+              </li>
             </ul>
           </div>
         </aside>
 
         <div class="flex-1 flex flex-col">
-          
-          <div id="product-grid" class="grid grid-cols-3 gap-[24px]">
-          </div>
+          <div id="product-grid" class="grid grid-cols-3 gap-[24px]"></div>
 
-          <div id="pagination" class="flex justify-center items-center gap-[8px] mt-[40px] w-full">
-          </div>
-
+          <div
+            id="pagination"
+            class="flex justify-center items-center gap-[8px] mt-[40px] w-full"
+          ></div>
         </div>
       </div>
     </main>
@@ -104,50 +237,144 @@
     <script>
       const allProducts = [
         // --- ĐIỆN THOẠI ---
-        {id: 1, name: 'Điện thoại Xiaomi Redmi Note 12', price: 4500000, category: 'dienthoai', img: 'redmi.webp' },
-        { id: 2, name: 'Điện thoại iPhone 13 Pro', price: 18000000, category: 'dienthoai', img: 'Iphone13Pro.jpg' },
-        { id: 3, name: 'Điện thoại Samsung Galaxy S23', price: 22000000, category: 'dienthoai', img: 'GalaxyS23.jpg' },
+        {
+          id: 1,
+          name: "Điện thoại Xiaomi Redmi Note 12",
+          price: 4500000,
+          category: "dienthoai",
+          img: "../images/redmi.webp",
+        },
+        {
+          id: 2,
+          name: "Điện thoại iPhone 13 Pro",
+          price: 18000000,
+          category: "dienthoai",
+          img: "../images/Iphone13Pro.jpg",
+        },
+        {
+          id: 3,
+          name: "Điện thoại Samsung Galaxy S23",
+          price: 22000000,
+          category: "dienthoai",
+          img: "../images/GalaxyS23.jpg",
+        },
 
         // --- LAPTOP ---
-        { id: 4, name: 'Laptop Dell XPS 13', price: 25000000, category: 'laptop', img: 'Dell.jpg' },
-        { id: 5, name: 'Laptop Asus Vivobook', price: 14000000, category: 'laptop', img: 'ASUS.jpg' },
-        { id: 6, name: 'MacBook Air M2', price: 23500000, category: 'laptop', img: 'Mac.jpg' },
+        {
+          id: 4,
+          name: "Laptop Dell XPS 13",
+          price: 25000000,
+          category: "laptop",
+          img: "../images/Dell.jpg",
+        },
+        {
+          id: 5,
+          name: "Laptop Asus Vivobook",
+          price: 14000000,
+          category: "laptop",
+          img: "../images/ASUS.jpg",
+        },
+        {
+          id: 6,
+          name: "MacBook Air M2",
+          price: 23500000,
+          category: "laptop",
+          img: "../images/Mac.jpg",
+        },
 
         // --- MÁY TÍNH BẢNG (TABLET) ---
-        { id: 7, name: 'iPad Gen 9 64GB', price: 7500000, category: 'tablet', img: 'Ipad.jpg' },
-        { id: 8, name: 'Samsung Galaxy Tab S8', price: 15000000, category: 'tablet', img: 'SamSung.jpg' },
-        { id: 9, name: 'Xiaomi Pad 6', price: 8500000, category: 'tablet', img: 'Xiaomi.jpg' },
+        {
+          id: 7,
+          name: "iPad Gen 9 64GB",
+          price: 7500000,
+          category: "tablet",
+          img: "../images/Ipad.jpg",
+        },
+        {
+          id: 8,
+          name: "Samsung Galaxy Tab S8",
+          price: 15000000,
+          category: "tablet",
+          img: "../images/SamSung.jpg",
+        },
+        {
+          id: 9,
+          name: "Xiaomi Pad 6",
+          price: 8500000,
+          category: "tablet",
+          img: "../images/Xiaomi.jpg",
+        },
 
         // --- ĐỒNG HỒ THÔNG MINH ---
-        { id: 10, name: 'Apple Watch SE 2022', price: 6500000, category: 'smartwatch', img: 'Watch.jpg' },
-        { id: 11, name: 'Samsung Galaxy Watch 6', price: 7000000, category: 'smartwatch', img: 'Watch6.jpg' },
-        { id: 12, name: 'Đồng hồ Garmin Forerunner', price: 8500000, category: 'smartwatch', img: 'Garmin.jpg' },
+        {
+          id: 10,
+          name: "Apple Watch SE 2022",
+          price: 6500000,
+          category: "smartwatch",
+          img: "../images/Watch.jpg",
+        },
+        {
+          id: 11,
+          name: "Samsung Galaxy Watch 6",
+          price: 7000000,
+          category: "smartwatch",
+          img: "../images/Watch6.jpg",
+        },
+        {
+          id: 12,
+          name: "Đồng hồ Garmin Forerunner",
+          price: 8500000,
+          category: "smartwatch",
+          img: "../images/Garmin.jpg",
+        },
 
         // --- PHỤ KIỆN ---
-        { id: 13, name: 'Tai nghe Bluetooth Sony', price: 1200000, category: 'phukien', img: 'Sony.jpg' },
-        { id: 14, name: 'Sạc dự phòng Anker 10000mAh', price: 450000, category: 'phukien', img: 'Anker.jpg' },
-        { id: 15, name: 'Chuột không dây Logitech G304', price: 800000, category: 'phukien', img: 'Logitech.jpg' }
+        {
+          id: 13,
+          name: "Tai nghe Bluetooth Sony",
+          price: 1200000,
+          category: "phukien",
+          img: "../images/Sony.jpg",
+        },
+        {
+          id: 14,
+          name: "Sạc dự phòng Anker 10000mAh",
+          price: 450000,
+          category: "phukien",
+          img: "../images/Anker.jpg",
+        },
+        {
+          id: 15,
+          name: "Chuột không dây Logitech G304",
+          price: 800000,
+          category: "phukien",
+          img: "../images/Logitech.jpg",
+        },
       ];
 
-      const productGrid = document.getElementById('product-grid');
-      const paginationContainer = document.getElementById('pagination');
+      const productGrid = document.getElementById("product-grid");
+      const paginationContainer = document.getElementById("pagination");
       let currentPage = 1;
       const itemsPerPage = 6; // Đang set 6 sản phẩm / 1 trang
       let currentFilteredList = [...allProducts];
 
       // 2. Hàm vẽ sản phẩm ra màn hình (Chỉ vẽ những cái thuộc trang hiện tại)
       function renderProducts() {
-        productGrid.innerHTML = ''; 
+        productGrid.innerHTML = "";
         if (currentFilteredList.length === 0) {
-          productGrid.innerHTML = '<div class="col-span-3 text-center text-gray-500 py-10 font-medium">Không tìm thấy sản phẩm nào phù hợp!</div>';
-          paginationContainer.innerHTML = ''; 
+          productGrid.innerHTML =
+            '<div class="col-span-3 text-center text-gray-500 py-10 font-medium">Không tìm thấy sản phẩm nào phù hợp!</div>';
+          paginationContainer.innerHTML = "";
           return;
         }
 
         const startIndex = (currentPage - 1) * itemsPerPage;
-        const productsToShow = currentFilteredList.slice(startIndex, startIndex + itemsPerPage);
+        const productsToShow = currentFilteredList.slice(
+          startIndex,
+          startIndex + itemsPerPage,
+        );
 
-        productsToShow.forEach(item => {
+        productsToShow.forEach((item) => {
           productGrid.innerHTML += `
             <div class="bg-white p-[16px] border border-[#e5e7eb] rounded-[8px] flex flex-col">
               
@@ -160,7 +387,7 @@
               </h3>
               
               <div class="mt-auto">
-                  <div class="text-[#dc2626] font-bold text-[18px] mb-[16px]">${item.price.toLocaleString('vi-VN')} ₫</div>
+                  <div class="text-[#dc2626] font-bold text-[18px] mb-[16px]">${item.price.toLocaleString("vi-VN")} ₫</div>
                   <button onclick="addToCart('${item.name}', ${item.price}, '${item.img}')" 
                       class="w-full h-[36px] bg-white border border-[#2563eb] text-[#2563eb] text-[14px] font-medium rounded-[4px] hover:bg-[#2563eb] hover:text-white transition-colors">
                       Thêm giỏ hàng
@@ -168,62 +395,87 @@
               </div>
             </div>
           `;
-        }); 
+        });
         renderPagination();
       }
 
       // 3. Hàm tạo các nút bấm trang
       function renderPagination() {
         const totalPages = Math.ceil(currentFilteredList.length / itemsPerPage);
-        paginationContainer.innerHTML = ''; // Xóa sạch để vẽ lại
+        paginationContainer.innerHTML = ""; // Xóa sạch để vẽ lại
 
         if (totalPages <= 1) return; // Nếu chỉ có 1 trang thì khỏi vẽ nút
 
         // Vẽ nút `<` (Trang trước)
-        const prevBtn = document.createElement('button');
-        prevBtn.className = "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6] disabled:opacity-50 disabled:cursor-not-allowed";
-        prevBtn.innerText = '<';
+        const prevBtn = document.createElement("button");
+        prevBtn.className =
+          "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6] disabled:opacity-50 disabled:cursor-not-allowed";
+        prevBtn.innerText = "<";
         prevBtn.disabled = currentPage === 1; // Đang ở trang 1 thì khóa nút
-        prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; renderProducts(); } };
+        prevBtn.onclick = () => {
+          if (currentPage > 1) {
+            currentPage--;
+            renderProducts();
+          }
+        };
         paginationContainer.appendChild(prevBtn);
 
         // Vẽ các số 1, 2, 3...
         for (let i = 1; i <= totalPages; i++) {
-          const pageBtn = document.createElement('button');
+          const pageBtn = document.createElement("button");
           if (i === currentPage) {
-             // CSS cho trang đang chọn (Màu xanh)
-             pageBtn.className = "w-[36px] h-[36px] bg-[#2563eb] text-white rounded-[4px] flex items-center justify-center";
+            // CSS cho trang đang chọn (Màu xanh)
+            pageBtn.className =
+              "w-[36px] h-[36px] bg-[#2563eb] text-white rounded-[4px] flex items-center justify-center";
           } else {
-             // CSS cho trang bình thường (Màu trắng)
-             pageBtn.className = "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6]";
+            // CSS cho trang bình thường (Màu trắng)
+            pageBtn.className =
+              "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6]";
           }
           pageBtn.innerText = i;
-          pageBtn.onclick = () => { currentPage = i; renderProducts(); };
+          pageBtn.onclick = () => {
+            currentPage = i;
+            renderProducts();
+          };
           paginationContainer.appendChild(pageBtn);
         }
 
         // Vẽ nút `>` (Trang tiếp)
-        const nextBtn = document.createElement('button');
-        nextBtn.className = "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6] disabled:opacity-50 disabled:cursor-not-allowed";
-        nextBtn.innerText = '>';
+        const nextBtn = document.createElement("button");
+        nextBtn.className =
+          "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6] disabled:opacity-50 disabled:cursor-not-allowed";
+        nextBtn.innerText = ">";
         nextBtn.disabled = currentPage === totalPages; // Ở trang cuối thì khóa nút
-        nextBtn.onclick = () => { if(currentPage < totalPages) { currentPage++; renderProducts(); } };
+        nextBtn.onclick = () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            renderProducts();
+          }
+        };
         paginationContainer.appendChild(nextBtn);
       }
 
       // 4. Hàm xử lý Lọc
       function filterProducts() {
-        const checkedCategories = Array.from(document.querySelectorAll('.filter-checkbox:checked')).map(cb => cb.value);
-        const selectedPrice = document.querySelector('.filter-radio:checked').value;
+        const checkedCategories = Array.from(
+          document.querySelectorAll(".filter-checkbox:checked"),
+        ).map((cb) => cb.value);
+        const selectedPrice = document.querySelector(
+          ".filter-radio:checked",
+        ).value;
 
-        currentFilteredList = allProducts.filter(product => {
-          const matchCategory = checkedCategories.length === 0 || checkedCategories.includes(product.category);
-          
+        currentFilteredList = allProducts.filter((product) => {
+          const matchCategory =
+            checkedCategories.length === 0 ||
+            checkedCategories.includes(product.category);
+
           let matchPrice = true;
-          if (selectedPrice === 'under5') matchPrice = product.price < 5000000;
-          if (selectedPrice === '5to10') matchPrice = product.price >= 5000000 && product.price <= 10000000;
-          if (selectedPrice === '10to20') matchPrice = product.price > 10000000 && product.price <= 20000000;
-          if (selectedPrice === 'over20') matchPrice = product.price > 20000000;
+          if (selectedPrice === "under5") matchPrice = product.price < 5000000;
+          if (selectedPrice === "5to10")
+            matchPrice = product.price >= 5000000 && product.price <= 10000000;
+          if (selectedPrice === "10to20")
+            matchPrice = product.price > 10000000 && product.price <= 20000000;
+          if (selectedPrice === "over20") matchPrice = product.price > 20000000;
 
           return matchCategory && matchPrice;
         });
@@ -234,64 +486,80 @@
       }
 
       // 5. Gắn sự kiện lắng nghe click
-      document.querySelectorAll('.filter-checkbox, .filter-radio').forEach(input => {
-        input.addEventListener('change', filterProducts);
-      });
+      document
+        .querySelectorAll(".filter-checkbox, .filter-radio")
+        .forEach((input) => {
+          input.addEventListener("change", filterProducts);
+        });
 
       // Mở web lên là chạy lọc để vẽ dữ liệu
       filterProducts();
     </script>
 
-    <footer class="bg-white border-t border-[#e5e7eb] mt-[60px] py-[40px]">
-      <div class="w-[1200px] mx-auto px-4 grid grid-cols-4 gap-[32px]">
-        <div>
-          <h4 class="font-bold text-[#1e3a8a] text-[20px] mb-[16px]">
-            TechStore
-          </h4>
-          <p class="text-[13px] text-[#6b7280] leading-[22px]">
-            Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.
-          </p>
-        </div>
-        <div>
-          <h4 class="font-bold text-[15px] text-[#111827] mb-[16px]">
-            Thông tin
-          </h4>
-          <ul class="text-[13px] text-[#4b5563] flex flex-col gap-[10px]">
-            <li><a href="#" class="hover:text-[#2563eb]">Giới thiệu</a></li>
-            <li><a href="#" class="hover:text-[#2563eb]">Tuyển dụng</a></li>
-            <li>
-              <a href="#" class="hover:text-[#2563eb]">Chính sách bảo mật</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold text-[15px] text-[#111827] mb-[16px]">
-            Hỗ trợ khách hàng
-          </h4>
-          <ul class="text-[13px] text-[#4b5563] flex flex-col gap-[10px]">
-            <li>
-              <a href="#" class="hover:text-[#2563eb]">Hướng dẫn mua hàng</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-[#2563eb]">Chính sách đổi trả</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-[#2563eb]">Chính sách bảo hành</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold text-[15px] text-[#111827] mb-[16px]">
-            Liên hệ
-          </h4>
-          <ul class="text-[13px] text-[#4b5563] flex flex-col gap-[10px]">
-            <li>Hotline: 1900 xxxx</li>
-            <li>Email: cskh@techstore.vn</li>
-            <li>Hà Nội, Việt Nam</li>
-          </ul>
-        </div>
+    <footer class="footer">
+      <div class="footer-col">
+        <div class="logo">TechStore</div>
+        <p>Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Thông tin</h4>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Tuyển dụng</a>
+        <a href="#">Chính sách bảo mật</a>
+      </div>
+      <div class="footer-col">
+        <h4>Hỗ trợ khách hàng</h4>
+        <a href="#">Hướng dẫn mua hàng</a>
+        <a href="#">Chính sách đổi trả</a>
+        <a href="#">Chính sách bảo hành</a>
+      </div>
+      <div class="footer-col">
+        <h4>Liên hệ</h4>
+        <p>Hotline: 1900 xxxx</p>
+        <p>Email: cskh@techstore.vn</p>
+        <p>Hà Nội, Việt Nam</p>
       </div>
     </footer>
-<script src="common.js"></script>
+    <style>
+      .footer {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 40px auto 0;
+        border-top: 1px solid #e5e7eb;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      .footer-col {
+        flex: 1;
+        padding: 0 20px;
+      }
+
+      .footer-col .logo {
+        margin-bottom: 16px;
+        color: #1d4ed8;
+        font-size: 24px;
+        font-weight: 800;
+      }
+
+      .footer-col p,
+      .footer-col a {
+        display: block;
+        font-size: 13px;
+        color: #6b7280;
+        margin-bottom: 10px;
+      }
+      .footer-col a:hover {
+        color: #1d4ed8;
+      }
+      .footer-col h4 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: #1f2937;
+      }
+    </style>
+    <script src="../js/common.js"></script>
   </body>
 </html>

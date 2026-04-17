@@ -4,116 +4,259 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechStore - Chi tiết sản phẩm</title>
+
+    <script src="../js/auth.js"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      .rating-bar { height: 8px; border-radius: 4px; background-color: #e5e7eb; overflow: hidden; }
-      .rating-fill { height: 100%; background-color: #facc15; }
+      .rating-bar {
+        height: 8px;
+        border-radius: 4px;
+        background-color: #e5e7eb;
+        overflow: hidden;
+      }
+      .rating-fill {
+        height: 100%;
+        background-color: #facc15;
+      }
     </style>
   </head>
   <body class="bg-gray-50 text-gray-800">
-    <header class="bg-white border-b border-gray-200">
-      <div class="max-w-[1200px] mx-auto flex items-center justify-between py-4 px-4">
-        <div class="text-2xl font-bold text-blue-800">TechStore</div>
-        <div class="flex-1 max-w-xl mx-8 relative">
-          <input type="text" placeholder="Tìm kiếm sản phẩm..." class="w-full bg-gray-100 border border-gray-300 rounded-full py-2 px-6 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+    <header class="bg-white border-b border-[#e5e7eb] pt-[20px]">
+      <div
+        class="w-[1200px] mx-auto flex items-center justify-between pb-[20px] px-4 sm:px-0"
+      >
+        <a href="index.html" class="text-[28px] font-[800] text-[#1d4ed8]">
+          TechStore
+        </a>
+
+        <div
+          class="flex bg-[#f3f4f6] rounded-full px-[24px] py-[12px] w-[500px]"
+        >
+          <input
+            type="text"
+            placeholder="Tìm kiếm sản phẩm"
+            class="border-none bg-transparent outline-none flex-1 text-[14px] text-[#1f2937]"
+          />
+          <button
+            class="border-none bg-transparent cursor-pointer text-[#6b7280] hover:text-[#1d4ed8]"
+          >
+            🔍
+          </button>
         </div>
-        <div class="flex items-center space-x-6 text-gray-600">
-          <a href="#" class="hover:text-blue-600 font-medium">Đăng nhập</a>
-          <a href="cart.html" class="hover:text-blue-600 font-medium flex items-center">🛒 Giỏ hàng</a>
+
+        <div class="flex items-start gap-[40px]">
+          <div id="auth-area">
+            <a
+              href="login.html"
+              class="flex flex-col items-center text-[13px] text-[#1f2937] hover:text-[#2563eb] transition-colors"
+            >
+              <span class="text-[22px] mb-[4px]">👤</span>
+              <span class="font-medium whitespace-nowrap">Đăng nhập</span>
+            </a>
+          </div>
+
+          <div
+            class="flex flex-col items-center text-[13px] text-[#1f2937] cursor-pointer hover:text-[#2563eb] transition-colors"
+          >
+            <span class="text-[22px] mb-[4px]">🤍</span>
+            <span class="font-medium whitespace-nowrap">Yêu thích</span>
+          </div>
+
+          <a
+            href="cart.html"
+            class="flex flex-col items-center text-[13px] text-[#1f2937] hover:text-[#2563eb] transition-colors"
+          >
+            <span class="text-[22px] mb-[4px]">🛒</span>
+            <span class="font-medium whitespace-nowrap">Giỏ hàng</span>
+          </a>
         </div>
       </div>
+
+      <nav
+        class="w-[1200px] mx-auto flex justify-center gap-[48px] py-[16px] px-4 sm:px-0 text-[15px] font-[600] text-[#4b5563] border-t border-[#f3f4f6]"
+      >
+        <a href="danhmuc.html" class="hover:text-[#2563eb] transition-colors"
+          >Tất cả danh mục</a
+        >
+        <a href="index.html" class="hover:text-[#2563eb] transition-colors"
+          >Trang chủ</a
+        >
+        <a href="danhmuc.html" class="text-[#2563eb]">Sản phẩm</a>
+        <a href="#" class="hover:text-[#2563eb] transition-colors">Liên hệ</a>
+      </nav>
     </header>
 
     <main class="max-w-[1000px] mx-auto px-4 py-8">
       <div class="text-sm text-gray-400 mb-6">
-        Trang chủ > Sản phẩm > <span id="breadcrumb-name" class="text-gray-600">Chi tiết sản phẩm</span>
+        Trang chủ > Sản phẩm >
+        <span id="breadcrumb-name" class="text-gray-600"
+          >Chi tiết sản phẩm</span
+        >
       </div>
 
-      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex gap-12 mb-8">
+      <div
+        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex gap-12 mb-8"
+      >
         <div class="w-1/2">
-          <div class="border border-gray-100 rounded-xl p-4 flex items-center justify-center h-[450px]">
-            <img id="main-img" src="" class="max-h-full object-contain" alt="Product">
+          <div
+            class="border border-gray-100 rounded-xl p-4 flex items-center justify-center h-[450px]"
+          >
+            <img
+              id="main-img"
+              src=""
+              class="max-h-full object-contain"
+              alt="Product"
+            />
           </div>
           <div class="flex gap-4 mt-6">
-            <div class="w-20 h-20 border-2 border-blue-500 rounded-lg p-1 cursor-pointer"><img id="thumb-1" src="" class="w-full h-full object-contain"></div>
-            <div class="w-20 h-20 border border-gray-200 rounded-lg p-1 cursor-pointer opacity-50"><img id="thumb-2" src="" class="w-full h-full object-contain"></div>
+            <div
+              class="w-20 h-20 border-2 border-blue-500 rounded-lg p-1 cursor-pointer"
+            >
+              <img id="thumb-1" src="" class="w-full h-full object-contain" />
+            </div>
+            <div
+              class="w-20 h-20 border border-gray-200 rounded-lg p-1 cursor-pointer opacity-50"
+            >
+              <img id="thumb-2" src="" class="w-full h-full object-contain" />
+            </div>
           </div>
         </div>
 
         <div class="w-1/2">
-          <h1 id="product-name" class="text-2xl font-bold text-gray-900 mb-2">Tên sản phẩm</h1>
-          <div id="product-price" class="text-3xl font-extrabold text-red-600 mb-6">0 ₫</div>
-          
+          <h1 id="product-name" class="text-2xl font-bold text-gray-900 mb-2">
+            Tên sản phẩm
+          </h1>
+          <div
+            id="product-price"
+            class="text-3xl font-extrabold text-red-600 mb-6"
+          >
+            0 ₫
+          </div>
+
           <div class="space-y-4 mb-8">
-            <div class="text-sm font-semibold text-gray-700 uppercase tracking-wider">Thông số kỹ thuật:</div>
+            <div
+              class="text-sm font-semibold text-gray-700 uppercase tracking-wider"
+            >
+              Thông số kỹ thuật:
+            </div>
             <ul class="text-sm text-gray-600 space-y-3">
-              <li class="flex justify-between border-b pb-2"><span>Màn hình:</span> <span class="text-gray-900">6.9 inches, Super Retina XDR</span></li>
-              <li class="flex justify-between border-b pb-2"><span>Camera sau:</span> <span class="text-gray-900">48MP Pro Fusion</span></li>
-              <li class="flex justify-between border-b pb-2"><span>Chipset:</span> <span class="text-gray-900">Apple A19 Pro</span></li>
-              <li class="flex justify-between border-b pb-2"><span>Pin:</span> <span class="text-gray-900">Sử dụng lên đến 37 giờ</span></li>
+              <li class="flex justify-between border-b pb-2">
+                <span>Màn hình:</span>
+                <span class="text-gray-900">6.9 inches, Super Retina XDR</span>
+              </li>
+              <li class="flex justify-between border-b pb-2">
+                <span>Camera sau:</span>
+                <span class="text-gray-900">48MP Pro Fusion</span>
+              </li>
+              <li class="flex justify-between border-b pb-2">
+                <span>Chipset:</span>
+                <span class="text-gray-900">Apple A19 Pro</span>
+              </li>
+              <li class="flex justify-between border-b pb-2">
+                <span>Pin:</span>
+                <span class="text-gray-900">Sử dụng lên đến 37 giờ</span>
+              </li>
             </ul>
           </div>
 
-          <button onclick="buyNow()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all transform active:scale-95 uppercase">
+          <button
+            onclick="buyNow()"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all transform active:scale-95 uppercase"
+          >
             Mua ngay
           </button>
         </div>
       </div>
 
-      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mb-8">
+      <div
+        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mb-8"
+      >
         <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
           <span class="w-1 h-6 bg-blue-600 rounded-full"></span> Mô tả sản phẩm
         </h2>
-        <div class="grid grid-cols-2 gap-8 items-center text-gray-600 leading-relaxed text-sm">
-          <div id="desc-img-container" class="bg-gray-50 rounded-xl p-6 flex justify-center">
-            <img id="desc-img" src="" class="max-h-[300px] object-contain">
+        <div
+          class="grid grid-cols-2 gap-8 items-center text-gray-600 leading-relaxed text-sm"
+        >
+          <div
+            id="desc-img-container"
+            class="bg-gray-50 rounded-xl p-6 flex justify-center"
+          >
+            <img id="desc-img" src="" class="max-h-[300px] object-contain" />
           </div>
           <div>
-            <p id="product-desc-text">Thiết kế nhôm nguyên khối tinh tế cùng khả năng chống nước IP68. Hiệu năng mạnh mẽ vượt trội đáp ứng mọi nhu cầu làm việc và giải trí đỉnh cao.</p>
+            <p id="product-desc-text">
+              Thiết kế nhôm nguyên khối tinh tế cùng khả năng chống nước IP68.
+              Hiệu năng mạnh mẽ vượt trội đáp ứng mọi nhu cầu làm việc và giải
+              trí đỉnh cao.
+            </p>
           </div>
         </div>
       </div>
 
       <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
         <h2 class="text-xl font-bold mb-8">Feedback / Đánh giá</h2>
-        
+
         <div class="flex items-center gap-12 mb-10 border-b pb-10">
           <div class="text-center">
             <div class="text-5xl font-black text-yellow-500 mb-2">4.8</div>
             <div class="text-yellow-400 text-xl mb-1">★★★★★</div>
             <div class="text-xs text-gray-400">98 đánh giá</div>
           </div>
-          
+
           <div class="flex-1 space-y-3">
             <div class="flex items-center gap-4 text-xs font-medium">
               <span class="w-8">5 sao</span>
-              <div class="flex-1 rating-bar"><div class="rating-fill" style="width: 80%"></div></div>
+              <div class="flex-1 rating-bar">
+                <div class="rating-fill" style="width: 80%"></div>
+              </div>
               <span class="w-8 text-right text-gray-400">80%</span>
             </div>
             <div class="flex items-center gap-4 text-xs font-medium">
               <span class="w-8">4 sao</span>
-              <div class="flex-1 rating-bar"><div class="rating-fill" style="width: 15%"></div></div>
+              <div class="flex-1 rating-bar">
+                <div class="rating-fill" style="width: 15%"></div>
+              </div>
               <span class="w-8 text-right text-gray-400">15%</span>
             </div>
             <div class="flex items-center gap-4 text-xs font-medium">
               <span class="w-8">3 sao</span>
-              <div class="flex-1 rating-bar"><div class="rating-fill" style="width: 5%"></div></div>
+              <div class="flex-1 rating-bar">
+                <div class="rating-fill" style="width: 5%"></div>
+              </div>
               <span class="w-8 text-right text-gray-400">5%</span>
             </div>
           </div>
         </div>
 
         <div class="mb-10">
-          <textarea id="review-input" placeholder="Bạn thấy sản phẩm này thế nào? Chia sẻ cùng mọi người nhé..." class="w-full bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"></textarea>
-          <button onclick="addReview()" class="bg-gray-900 text-white px-8 py-2.5 rounded-lg text-sm font-bold hover:bg-black transition">Gửi đánh giá</button>
+          <textarea
+            id="review-input"
+            placeholder="Bạn thấy sản phẩm này thế nào? Chia sẻ cùng mọi người nhé..."
+            class="w-full bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"
+          ></textarea>
+          <button
+            onclick="addReview()"
+            class="bg-gray-900 text-white px-8 py-2.5 rounded-lg text-sm font-bold hover:bg-black transition"
+          >
+            Gửi đánh giá
+          </button>
         </div>
 
         <div id="review-list" class="space-y-6">
           <div class="flex gap-4 border-b border-gray-50 pb-6">
-            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">N</div>
+            <div
+              class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold"
+            >
+              N
+            </div>
             <div>
-              <div class="text-sm font-bold flex items-center gap-2">Như An <span class="text-yellow-400 text-xs">★★★★★</span></div>
-              <p class="text-sm text-gray-500 mt-1 italic">Sản phẩm rất tốt, đúng chính hãng, giao hàng cực nhanh.</p>
+              <div class="text-sm font-bold flex items-center gap-2">
+                Như An <span class="text-yellow-400 text-xs">★★★★★</span>
+              </div>
+              <p class="text-sm text-gray-500 mt-1 italic">
+                Sản phẩm rất tốt, đúng chính hãng, giao hàng cực nhanh.
+              </p>
             </div>
           </div>
         </div>
@@ -123,63 +266,154 @@
     <script>
       // 1. Dữ liệu từ danhmuc.html
       const allProducts = [
-        { id: 1, name: 'Điện thoại Xiaomi Redmi Note 12', price: 4500000, category: 'dienthoai', img: 'redmi.webp' },
-        { id: 2, name: 'Điện thoại iPhone 13 Pro', price: 18000000, category: 'dienthoai', img: 'Iphone13Pro.jpg' },
-        { id: 3, name: 'Điện thoại Samsung Galaxy S23', price: 22000000, category: 'dienthoai', img: 'GalaxyS23.jpg' },
-        { id: 4, name: 'Laptop Dell XPS 13', price: 25000000, category: 'laptop', img: 'Dell.jpg' },
-        { id: 5, name: 'Laptop Asus Vivobook', price: 14000000, category: 'laptop', img: 'ASUS.jpg' },
-        { id: 6, name: 'MacBook Air M2', price: 23500000, category: 'laptop', img: 'Mac.jpg' },
-        { id: 7, name: 'iPad Gen 9 64GB', price: 7500000, category: 'tablet', img: 'Ipad.jpg' },
-        { id: 8, name: 'Samsung Galaxy Tab S8', price: 15000000, category: 'tablet', img: 'SamSung.jpg' },
-        { id: 9, name: 'Xiaomi Pad 6', price: 8500000, category: 'tablet', img: 'Xiaomi.jpg' },
-        { id: 10, name: 'Apple Watch SE 2022', price: 6500000, category: 'smartwatch', img: 'Watch.jpg' },
-        { id: 11, name: 'Samsung Galaxy Watch 6', price: 7000000, category: 'smartwatch', img: 'Watch6.jpg' },
-        { id: 12, name: 'Đồng hồ Garmin Forerunner', price: 8500000, category: 'smartwatch', img: 'Garmin.jpg' },
-        { id: 13, name: 'Tai nghe Bluetooth Sony', price: 1200000, category: 'phukien', img: 'Sony.jpg' },
-        { id: 14, name: 'Sạc dự phòng Anker 10000mAh', price: 450000, category: 'phukien', img: 'Anker.jpg' },
-        { id: 15, name: 'Chuột không dây Logitech G304', price: 800000, category: 'phukien', img: 'Logitech.jpg' }
+        {
+          id: 1,
+          name: "Điện thoại Xiaomi Redmi Note 12",
+          price: 4500000,
+          category: "dienthoai",
+          img: "../images/redmi.webp",
+        },
+        {
+          id: 2,
+          name: "Điện thoại iPhone 13 Pro",
+          price: 18000000,
+          category: "dienthoai",
+          img: "../images/Iphone13Pro.jpg",
+        },
+        {
+          id: 3,
+          name: "Điện thoại Samsung Galaxy S23",
+          price: 22000000,
+          category: "dienthoai",
+          img: "../images/GalaxyS23.jpg",
+        },
+        {
+          id: 4,
+          name: "Laptop Dell XPS 13",
+          price: 25000000,
+          category: "laptop",
+          img: "../images/Dell.jpg",
+        },
+        {
+          id: 5,
+          name: "Laptop Asus Vivobook",
+          price: 14000000,
+          category: "laptop",
+          img: "../images/ASUS.jpg",
+        },
+        {
+          id: 6,
+          name: "MacBook Air M2",
+          price: 23500000,
+          category: "laptop",
+          img: "../images/Mac.jpg",
+        },
+        {
+          id: 7,
+          name: "iPad Gen 9 64GB",
+          price: 7500000,
+          category: "tablet",
+          img: "../images/Ipad.jpg",
+        },
+        {
+          id: 8,
+          name: "Samsung Galaxy Tab S8",
+          price: 15000000,
+          category: "tablet",
+          img: "../images/SamSung.jpg",
+        },
+        {
+          id: 9,
+          name: "Xiaomi Pad 6",
+          price: 8500000,
+          category: "tablet",
+          img: "../images/Xiaomi.jpg",
+        },
+        {
+          id: 10,
+          name: "Apple Watch SE 2022",
+          price: 6500000,
+          category: "smartwatch",
+          img: "../images/Watch.jpg",
+        },
+        {
+          id: 11,
+          name: "Samsung Galaxy Watch 6",
+          price: 7000000,
+          category: "smartwatch",
+          img: "../images/Watch6.jpg",
+        },
+        {
+          id: 12,
+          name: "Đồng hồ Garmin Forerunner",
+          price: 8500000,
+          category: "smartwatch",
+          img: "../images/Garmin.jpg",
+        },
+        {
+          id: 13,
+          name: "Tai nghe Bluetooth Sony",
+          price: 1200000,
+          category: "phukien",
+          img: "../images/Sony.jpg",
+        },
+        {
+          id: 14,
+          name: "Sạc dự phòng Anker 10000mAh",
+          price: 450000,
+          category: "phukien",
+          img: "../images/Anker.jpg",
+        },
+        {
+          id: 15,
+          name: "Chuột không dây Logitech G304",
+          price: 800000,
+          category: "phukien",
+          img: "../images/Logitech.jpg",
+        },
       ];
 
       // 2. Lấy ID sản phẩm từ URL
       const urlParams = new URLSearchParams(window.location.search);
-      const pid = parseInt(urlParams.get('id')) || 1;
-      const product = allProducts.find(p => p.id === pid);
+      const pid = parseInt(urlParams.get("id")) || 1;
+      const product = allProducts.find((p) => p.id === pid);
 
       // 3. Hiển thị dữ liệu
-      if(product) {
-        document.getElementById('product-name').innerText = product.name;
-        document.getElementById('breadcrumb-name').innerText = product.name;
-        document.getElementById('product-price').innerText = product.price.toLocaleString('vi-VN') + " ₫";
-        document.getElementById('main-img').src = product.img;
-        document.getElementById('thumb-1').src = product.img;
-        document.getElementById('thumb-2').src = product.img;
-        document.getElementById('desc-img').src = product.img;
+      if (product) {
+        document.getElementById("product-name").innerText = product.name;
+        document.getElementById("breadcrumb-name").innerText = product.name;
+        document.getElementById("product-price").innerText =
+          product.price.toLocaleString("vi-VN") + " ₫";
+        document.getElementById("main-img").src = product.img;
+        document.getElementById("thumb-1").src = product.img;
+        document.getElementById("thumb-2").src = product.img;
+        document.getElementById("desc-img").src = product.img;
       }
 
       // 4. Hàm Mua ngay (Lưu vào giỏ và chuyển trang)
       function buyNow() {
-        let cart = JSON.parse(localStorage.getItem('MY_CART')) || [];
-        let item = cart.find(i => i.name === product.name);
-        if(item) {
+        let cart = JSON.parse(localStorage.getItem("MY_CART")) || [];
+        let item = cart.find((i) => i.name === product.name);
+        if (item) {
           item.quantity += 1;
         } else {
           cart.push({
             name: product.name,
             price: product.price,
             image: product.img,
-            quantity: 1
+            quantity: 1,
           });
         }
-        localStorage.setItem('MY_CART', JSON.stringify(cart));
-        window.location.href = 'cart.html';
+        localStorage.setItem("MY_CART", JSON.stringify(cart));
+        window.location.href = "cart.html";
       }
 
       // 5. Logic đánh giá
       function addReview() {
-        const input = document.getElementById('review-input');
-        if(!input.value.trim()) return alert("Vui lòng nhập đánh giá!");
-        
-        const list = document.getElementById('review-list');
+        const input = document.getElementById("review-input");
+        if (!input.value.trim()) return alert("Vui lòng nhập đánh giá!");
+
+        const list = document.getElementById("review-list");
         const newReview = `
           <div class="flex gap-4 border-b border-gray-50 pb-6 animate-fade-in">
             <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">U</div>
@@ -188,7 +422,7 @@
               <p class="text-sm text-gray-500 mt-1">${input.value}</p>
             </div>
           </div>`;
-        list.insertAdjacentHTML('afterbegin', newReview);
+        list.insertAdjacentHTML("afterbegin", newReview);
         input.value = "";
       }
     </script>

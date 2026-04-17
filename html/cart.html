@@ -1,135 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechStore - Giỏ hàng</title>
-    <link rel="stylesheet" href="cart.CSS">
-</head>
-<body>
-    <header class="header">
-        <div class="header-main">
-            <div class="logo">TechStore</div>
-            <div class="search-bar">
-                <input type="text" placeholder="Tìm kiếm sản phẩm">
-                <button>🔍</button>
-            </div>
-            <div class="user-actions">
-                <div class="action-item">
-                    <span class="icon">👤</span>
-                    <span>Đăng nhập</span>
-                </div>
-                <div class="action-item">
-                    <span class="icon">🤍</span>
-                    <span>Yêu thích</span>
-                </div>
-                <a href="cart.html" class="action-item">
-                    <span class="icon">🛒</span>
-                    <span>Giỏ hàng</span>
-                </a>
-            </div>
+
+    <script src="../js/auth.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body class="bg-[#f8f9fa] text-[#333333] font-sans">
+    <header class="bg-white border-b border-[#e5e7eb] pt-[20px]">
+      <div
+        class="w-[1200px] mx-auto flex items-center justify-between pb-[20px] px-4 sm:px-0"
+      >
+        <a href="index.html" class="text-[28px] font-[800] text-[#1d4ed8]">
+          TechStore
+        </a>
+
+        <div
+          class="flex bg-[#f3f4f6] rounded-full px-[24px] py-[12px] w-[500px]"
+        >
+          <input
+            type="text"
+            placeholder="Tìm kiếm sản phẩm"
+            class="border-none bg-transparent outline-none flex-1 text-[14px] text-[#1f2937]"
+          />
+          <button
+            class="border-none bg-transparent cursor-pointer text-[#6b7280] hover:text-[#1d4ed8]"
+          >
+            🔍
+          </button>
         </div>
-        <nav class="header-nav">
-            <a href="danhmuc.html">Tất cả danh mục</a>
-            <a href="index.html">Trang chủ</a> 
-            <a href="danhmuc.html">Sản phẩm</a>
-            <a href="#">Liên hệ</a>
-        </nav>
+
+        <div class="flex items-start gap-[40px]">
+          <div id="auth-area">
+            <a
+              href="login.html"
+              class="flex flex-col items-center text-[13px] text-[#1f2937] hover:text-[#2563eb] transition-colors"
+            >
+              <span class="text-[22px] mb-[4px]">👤</span>
+              <span class="font-medium whitespace-nowrap">Đăng nhập</span>
+            </a>
+          </div>
+
+          <div
+            class="flex flex-col items-center text-[13px] text-[#1f2937] cursor-pointer hover:text-[#2563eb] transition-colors"
+          >
+            <span class="text-[22px] mb-[4px]">🤍</span>
+            <span class="font-medium whitespace-nowrap">Yêu thích</span>
+          </div>
+
+          <a
+            href="cart.html"
+            class="flex flex-col items-center text-[13px] text-[#1f2937] hover:text-[#2563eb] transition-colors"
+          >
+            <span class="text-[22px] mb-[4px]">🛒</span>
+            <span class="font-medium whitespace-nowrap">Giỏ hàng</span>
+          </a>
+        </div>
+      </div>
+
+      <nav
+        class="w-[1200px] mx-auto flex justify-center gap-[48px] py-[16px] px-4 sm:px-0 text-[15px] font-[600] text-[#4b5563] border-t border-[#f3f4f6]"
+      >
+        <a href="danhmuc.html" class="hover:text-[#2563eb] transition-colors"
+          >Tất cả danh mục</a
+        >
+        <a href="index.html" class="hover:text-[#2563eb] transition-colors"
+          >Trang chủ</a
+        >
+        <a href="danhmuc.html" class="hover:text-[#2563eb] transition-colors"
+          >Sản phẩm</a
+        >
+        <a href="#" class="hover:text-[#2563eb] transition-colors">Liên hệ</a>
+      </nav>
     </header>
-
     <div class="cart-wrapper">
-        <div class="breadcrumb">Trang chủ > <strong>Giỏ hàng</strong></div>
-        
-        <div class="stepper">
-            <div class="step active"><span class="circle">1</span> Giỏ hàng</div>
-            <div class="step-line"></div>
-            <div class="step"><span class="circle">2</span> Đặt hàng</div>
-            <div class="step-line"></div>
-            <div class="step"><span class="circle">3</span> Hoàn tất</div>
+      <div class="breadcrumb">Trang chủ > <strong>Giỏ hàng</strong></div>
+
+      <div class="stepper">
+        <div class="step active"><span class="circle">1</span> Giỏ hàng</div>
+        <div class="step-line"></div>
+        <div class="step"><span class="circle">2</span> Đặt hàng</div>
+        <div class="step-line"></div>
+        <div class="step"><span class="circle">3</span> Hoàn tất</div>
+      </div>
+
+      <div id="empty-cart" class="box empty-state">
+        <h3>Giỏ hàng đang trống!</h3>
+        <p>Thêm sản phẩm vào giỏ và quay lại đây nhé.</p>
+        <a href="danhmuc.html" class="shop-now-btn">Tiếp tục mua sắm</a>
+      </div>
+
+      <div id="cart-content" class="cart-grid">
+        <div class="cart-left">
+          <div class="box product-list-box" id="product-list"></div>
+          <a href="danhmuc.html" class="continue-shopping"
+            >← Tiếp tục mua sắm</a
+          >
         </div>
 
-        <div id="empty-cart" class="box empty-state">
-            <h3>Giỏ hàng đang trống!</h3>
-            <p>Thêm sản phẩm vào giỏ và quay lại đây nhé.</p>
-            <a href="danhmuc.html" class="shop-now-btn">Tiếp tục mua sắm</a>
-        </div>  
+        <div class="cart-right">
+          <div class="box summary-box">
+            <h3 class="summary-title">Tổng đơn hàng</h3>
 
-        <div id="cart-content" class="cart-grid">
-            <div class="cart-left">
-                <div class="box product-list-box" id="product-list">
-                    </div>
-                <a href="danhmuc.html" class="continue-shopping">← Tiếp tục mua sắm</a>
+            <div class="coupon-label">Mã giảm giá</div>
+            <div class="coupon-section">
+              <input type="text" id="coupon-input" placeholder="" />
+              <button onclick="applyCoupon()">Áp dụng</button>
+            </div>
+            <p id="coupon-msg" class="coupon-msg"></p>
+
+            <div class="summary-details">
+              <div class="summary-row">
+                <span>Tạm tính:</span>
+                <span id="subtotal" class="font-bold">0 đ</span>
+              </div>
+              <div class="summary-row" id="discount-row" style="display: none">
+                <span>Giảm giá:</span>
+                <span id="discount-amount" style="color: var(--danger-color)"
+                  >-0 đ</span
+                >
+              </div>
+              <div class="summary-row">
+                <span>Phí vận chuyển:</span>
+                <span id="shipping-fee" class="free-shipping">Miễn phí</span>
+              </div>
             </div>
 
-            <div class="cart-right">
-                <div class="box summary-box">
-                    <h3 class="summary-title">Tổng đơn hàng</h3>
-                    
-                    <div class="coupon-label">Mã giảm giá</div>
-                    <div class="coupon-section">
-                        <input type="text" id="coupon-input" placeholder="">
-                        <button onclick="applyCoupon()">Áp dụng</button>
-                    </div>
-                    <p id="coupon-msg" class="coupon-msg"></p>
-
-                    <div class="summary-details">
-                        <div class="summary-row">
-                            <span>Tạm tính:</span>
-                            <span id="subtotal" class="font-bold">0 đ</span>
-                        </div>
-                        <div class="summary-row" id="discount-row" style="display: none;">
-                            <span>Giảm giá:</span>
-                            <span id="discount-amount" style="color: var(--danger-color);">-0 đ</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>Phí vận chuyển:</span>
-                            <span id="shipping-fee" class="free-shipping">Miễn phí</span>
-                        </div>
-                    </div>
-
-                    <div class="summary-row total">
-                        <span>Tổng cộng :</span>
-                        <span id="final-total" class="total-price">0 đ</span>
-                    </div>
-
-                    <button class="checkout-btn" onclick="checkout()">Thanh toán</button>
-
-                    <ul class="benefits-list">
-                        <li>Bảo hành chính hãng toàn quốc</li>
-                        <li>Đổi trả miễn phí trong 7 ngày</li>
-                        <li>Thanh toán an toàn & bảo mật</li>
-                    </ul>
-                </div>
+            <div class="summary-row total">
+              <span>Tổng cộng :</span>
+              <span id="final-total" class="total-price">0 đ</span>
             </div>
+
+            <button class="checkout-btn" onclick="checkout()">
+              Thanh toán
+            </button>
+
+            <ul class="benefits-list">
+              <li>Bảo hành chính hãng toàn quốc</li>
+              <li>Đổi trả miễn phí trong 7 ngày</li>
+              <li>Thanh toán an toàn & bảo mật</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
 
     <footer class="footer">
-        <div class="footer-col">
-            <div class="logo">TechStore</div>
-            <p>Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Thông tin</h4>
-            <a href="#">Giới thiệu</a>
-            <a href="#">Tuyển dụng</a>
-            <a href="#">Chính sách bảo mật</a>
-        </div>
-        <div class="footer-col">
-            <h4>Hỗ trợ khách hàng</h4>
-            <a href="#">Hướng dẫn mua hàng</a>
-            <a href="#">Chính sách đổi trả</a>
-            <a href="#">Chính sách bảo hành</a>
-        </div>
-        <div class="footer-col">
-            <h4>Liên hệ</h4>
-            <p>Hotline: 1900 xxxx</p>
-            <p>Email: cskh@techstore.vn</p>
-            <p>Hà Nội, Việt Nam</p>
-        </div>
+      <div class="footer-col">
+        <div class="logo">TechStore</div>
+        <p>Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Thông tin</h4>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Tuyển dụng</a>
+        <a href="#">Chính sách bảo mật</a>
+      </div>
+      <div class="footer-col">
+        <h4>Hỗ trợ khách hàng</h4>
+        <a href="#">Hướng dẫn mua hàng</a>
+        <a href="#">Chính sách đổi trả</a>
+        <a href="#">Chính sách bảo hành</a>
+      </div>
+      <div class="footer-col">
+        <h4>Liên hệ</h4>
+        <p>Hotline: 1900 xxxx</p>
+        <p>Email: cskh@techstore.vn</p>
+        <p>Hà Nội, Việt Nam</p>
+      </div>
     </footer>
+    <style>
+      .footer {
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 40px auto 0;
+        border-top: 1px solid #e5e7eb;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      .footer-col {
+        flex: 1;
+        padding: 0 20px;
+      }
 
-    <script src="cart.JS"></script>
-    <script src="common.js"></script>
-</body>
+      .footer-col .logo {
+        margin-bottom: 16px;
+        color: #1d4ed8;
+        font-size: 24px;
+        font-weight: 800;
+      }
+
+      .footer-col p,
+      .footer-col a {
+        display: block;
+        font-size: 13px;
+        color: #6b7280;
+        margin-bottom: 10px;
+      }
+      .footer-col a:hover {
+        color: #1d4ed8;
+      }
+      .footer-col h4 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: #1f2937;
+      }
+    </style>
+    <script src="../js/cart.js"></script>
+    <script src="../js/common.js"></script>
+  </body>
 </html>
