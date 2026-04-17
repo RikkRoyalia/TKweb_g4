@@ -1,0 +1,144 @@
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+
+      .container-custom {
+        width: 92%;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .site-header {
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .top-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 10px 0;
+      }
+
+      .logo {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1e3a8a;
+        min-width: 120px;
+      }
+
+      .search-box {
+        flex: 1;
+        max-width: 520px;
+        display: flex;
+        align-items: center;
+        background: #f1eef4;
+        border-radius: 20px;
+        overflow: hidden;
+        height: 38px;
+      }
+
+      .search-box input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0 14px;
+        font-size: 13px;
+      }
+
+      .search-box button {
+        border: none;
+        background: transparent;
+        width: 42px;
+        cursor: pointer;
+        color: #666;
+        transition: color 0.2s ease;
+      }
+
+      .search-box button:hover {
+        color: #2e5bd7;
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .header-action {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 11px;
+        color: #333;
+        gap: 4px;
+        transition: color 0.2s ease;
+      }
+
+      .header-action:hover,
+      .header-action.active {
+        color: #2e5bd7;
+      }
+
+      .header-action i {
+        font-size: 20px;
+      }
+
+      .main-nav {
+        border-top: 0;
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding: 14px 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1f2937;
+      }
+
+      .nav-inner a {
+        transition: color 0.2s ease;
+      }
+
+      .nav-inner a:hover,
+      .nav-inner a.active {
+        color: #2e5bd7;
+      }
+
+      @media (max-width: 992px) {
+        .top-header {
+          flex-wrap: wrap;
+        }
+
+        .search-box {
+          order: 3;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .nav-inner {
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header-actions {
+          gap: 12px;
+        }
+
+        .header-action span {
+          font-size: 10px;
+        }
+      }
