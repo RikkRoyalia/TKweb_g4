@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>TechStore</title>
+    <link rel="stylesheet" href="./css/index.css" />
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
@@ -15,186 +15,172 @@
     <header class="header">
       <div class="header-top">
         <div class="container">
-          <div class="header-top-info">
-            <ul class="header-top-left">
-              <li><i class="fas fa-map-marker-alt"></i>Store Location</li>
-              <li><i class="fas fa-truck"></i>Track Your Order</li>
-              <li><i class="fas fa-phone"></i>Call Us For Enquiry</li>
-              <li>
-                <i class="fas fa-heart"></i>Welcome to Radios. We provides Best
-                Electronics item
-              </li>
-            </ul>
-            <div class="header-top-right">
-              <div class="date">
-                <i class="fas fa-calendar-alt"></i> Friday, July 27, 2020
-              </div>
-              <div class="header-social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
-              </div>
-            </div>
+          <div class="logo">
+            <span class="logo-text">TechStore</span>
           </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="header-middle">
-          <div class="header-logo">
-            <a href="index.html">
-              <img src="./images/logo.svg" alt="logo" />
-            </a>
-          </div>
-          <form class="header-search-box" action="#">
-            <div class="select-box">
-              <select id="category" name="category">
-                <option value="">All Categories</option>
-                <option value="4">Summer collections</option>
-                <option value="5">Breakfast &amp; Dairy</option>
-                <option value="6">Beverage &amp; Drinks</option>
-                <option value="7">Cocolate Box</option>
-                <option value="8">Dried Food Corner</option>
-                <option value="9">Frozen Foods</option>
-                <option value="10">Baby Food Corner</option>
-                <option value="11">Milk &amp; Juices</option>
-                <option value="12">Organic &amp; Snacks</option>
-              </select>
-            </div>
+          <div class="search-bar">
             <input
               type="text"
-              name="search"
-              id="search"
-              placeholder="Search For Products"
-              required=""
+              placeholder="Tìm kiếm sản phẩm"
+              class="search-input"
+              name="search-bar"
             />
-            <button type="submit"><i class="fas fa-search"></i></button>
-          </form>
-          <div class="header-lang">
-            <div class="header-language">
-              <ul>
-                <li>
-                  <a href="#" class="lang-btn"
-                    >USD <i class="fas fa-chevron-down"></i
-                  ></a>
-                  <ul class="lang_sub_list">
-                    <li>
-                      <a href="#">USD</a>
-                    </li>
-                    <li>
-                      <a href="#">BDT</a>
-                    </li>
-                    <li>
-                      <a href="#">EUR</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class="header-language">
-              <ul>
-                <li>
-                  <a href="#" class="lang-btn"
-                    ><img
-                      src="./Radios - Electronics Store WooCommerce Template_files/usd_flag.png"
-                      alt="" />English <i class="fas fa-chevron-down"></i
-                  ></a>
-                  <ul class="lang_sub_list">
-                    <li>
-                      <a href="#">English</a>
-                    </li>
-                    <li>
-                      <a href="#">Arabic</a>
-                    </li>
-                    <li>
-                      <a href="#">Bangla</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
           </div>
-          <div class="header-icons ul_li">
-            <div class="icon">
-              <a href="#"
-                ><img
-                  src="./Radios - Electronics Store WooCommerce Template_files/user.svg"
-                  alt=""
-              /></a>
-            </div>
-            <div class="icon wishlist-icon">
-              <a href="#">
-                <img
-                  src="./Radios - Electronics Store WooCommerce Template_files/heart.svg"
-                  alt=""
-                />
-                <span class="count">0</span>
-              </a>
-            </div>
-            <div class="cart_btn icon">
-              <img
-                src="./Radios - Electronics Store WooCommerce Template_files/shopping_bag.svg"
-                alt=""
-              />
-              <span class="count">0</span>
-            </div>
+          <div class="user-actions">
+            <a href="#" class="user-action register"
+              ><i class="fas fa-user"></i><span>Đăng ký</span></a
+            >
+            <a href="#" class="user-action cart"
+              ><i class="fas fa-shopping-cart"></i><span>Giỏ hàng</span></a
+            >
+            <a href="#" class="user-action wishlist"
+              ><i class="fas fa-heart"></i><span>Yêu thích</span></a
+            >
           </div>
         </div>
       </div>
-      <div class="header-cat-wrap">
+      <div class="header-bottom">
         <div class="container">
-          <div class="header-wrap">
-            <div class="header-category">
-              <div class="hamburger_menu">
-                <a href="javascript:void(0);" class="active">
-                  <div class="icon bar">
-                    <span><i class="fas fa-bars"></i></span>
-                  </div>
-                </a>
-              </div>
-              <ul class="category ul_li">
-                <li>
-                  <a href="#"
-                    ><i class="fas fa-laptop"></i>Laptops &amp; Computers</a
-                  >
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-camera"></i>CCTV & Camera</a>
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-home"></i>Home Equipment</a>
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-tv"></i>Tv &amp; Audios</a>            
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-print"></i>Printers &amp; Ink</a>
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-gamepad"></i>Gaming &amp; Fun</a>
-                </li>
-              </ul>
-            </div>
-            <div class="login-sign-btn">
-              <a
-                class="thm-btn"
-                href="https://html.themexriver.com/radios/account.html"
-              >
-                <span class="btn-wrap">
-                  <span>Login / Sign Up</span>
-                  <span>Login / Sign Up</span>
-                </span>
-              </a>
-            </div>
-          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="#" class="active"><span>Trang chủ</span></a>
+              </li>
+              <li>
+                <a href="#" class=""><span>Sản phẩm</span></a>
+              </li>
+              <li>
+                <a href="#" class=""><span>Cửa hàng</span></a>
+              </li>
+              <li>
+                <a href="#" class=""><span>Liên hệ</span></a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <div class="bread-crumbs">
+        <a href="#" class="active">Trang chủ</a>
+        <span>></span>
+        <a href="#">Sản phẩm</a>
+      </div>
+      <section class="hero-banner"></section>
+      <section class="hero-category">
+        <div class="container">
+          <div class="category-grid">
+            <a href="#" class="category-item">
+              <div class="category-img">
+                <img src="./images/category-phone.png" alt="Điện thoại" />
+              </div>
+              <span>Điện thoại</span>
+            </a>
+            <a href="#" class="category-item">
+              <div class="category-img">
+                <img src="./images/category-laptop.png" alt="Laptop" />
+              </div>
+              <span>Laptop</span>
+            </a>
+            <a href="#" class="category-item">
+              <div class="category-img">
+                <img src="./images/category-tablet.png" alt="Máy tính bảng" />
+              </div>
+              <span>Máy tính bảng</span>
+            </a>
+            <a href="#" class="category-item">
+              <div class="category-img">
+                <img
+                  src="./images/category-watch.png"
+                  alt="Đồng hồ thông minh"
+                />
+              </div>
+              <span>Đồng hồ thông minh</span>
+            </a>
+            <a href="#" class="category-item">
+              <div class="category-img">
+                <img src="./images/category-accessory.png" alt="Phụ kiện" />
+              </div>
+              <span>Phụ kiện</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="product-section">
+        <div class="section-header">
+          <div>
+            <span class="section-badge">KHUYẾN MÃI HOT</span>
+            <h2>Giảm giá đặc biệt</h2>
+            <p>Săn ngay ưu đãi khủng - Số lượng có hạn</p>
+          </div>
+          <a href="#" class="view-all">Xem tất cả →</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <span class="discount-badge">11%</span>
+            <img src="./images/product1.jpg" alt="" />
+            <h3>iPhone 16 Pro Max 256GB</h3>
+            <p class="old-price">34.990.000 đ</p>
+            <p class="new-price">30.990.000 đ</p>
+            <button>Thêm giỏ hàng</button>
+          </div>
+        </div>
+      </section>
+      <section class="product-section">
+        <div class="section-header">
+          <div>
+            <span class="section-badge">KHUYẾN MÃI HOT</span>
+            <h2>Sản phẩm nổi bật</h2>
+            <p>Những sản phẩm được yêu thích nhất</p>
+          </div>
+          <a href="#" class="view-all">Xem tất cả →</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <span class="discount-badge">11%</span>
+            <img src="./images/product1.jpg" alt="" />
+            <h3>iPhone 16 Pro Max 256GB</h3>
+            <p class="old-price">34.990.000 đ</p>
+            <p class="new-price">30.990.000 đ</p>
+            <button>Thêm giỏ hàng</button>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h2 class="footer-logo">TechStore</h2>
+            <h4>Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu</h4>
+          </div>
+          <div class="footer-section">
+            <h4>Thông tin</h4>
+            <ul>
+              <li><a href="#">Giới thiệu</a></li>
+              <li><a href="#">Tuyển dụng</a></li>
+              <li><a href="#">Chính sách bảo mật</a></li>
+          </div>
+          <div class="footer-section">
+            <h4>Hỗ trợ khách hàng</h4>
+            <ul>
+              <li><a href="#">Hướng dẫn mua hàng</a></li>
+              <li><a href="#">Chính sách đổi trả</a></li>
+              <li><a href="#">Chính sách bảo hành</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Liên hệ</h4>
+            <ul>
+              <li>Hotline: 0123 456 789</li>
+              <li>Email: info@techstore.com</li>
+              <li>Địa chỉ: 123 Đường ABC, Quận XYZ, TP. HCM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="scroll-ticket"></div>
     </footer>
-    <script src="index.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
