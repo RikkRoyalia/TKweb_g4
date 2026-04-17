@@ -458,6 +458,7 @@ a {
   }
 
   .address-section,
+  
   .footer-grid {
     grid-template-columns: 1fr;
   }
