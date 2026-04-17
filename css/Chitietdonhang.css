@@ -22,6 +22,7 @@ a {
   margin: 0 auto;
 }
 
+/* Header */
 .site-header {
   background: #fff;
   border-bottom: 1px solid #ddd;
@@ -68,11 +69,6 @@ a {
   width: 42px;
   cursor: pointer;
   color: #666;
-  transition: color 0.2s ease;
-}
-
-.search-box button:hover {
-  color: #2e5bd7;
 }
 
 .header-actions {
@@ -88,16 +84,14 @@ a {
   font-size: 11px;
   color: #333;
   gap: 4px;
-  transition: color 0.2s ease;
-}
-
-.header-action:hover,
-.header-action.active {
-  color: #2e5bd7;
 }
 
 .header-action i {
   font-size: 20px;
+}
+
+.main-nav {
+  border-top: 1px solid #f0f0f0;
 }
 
 .nav-inner {
@@ -109,15 +103,11 @@ a {
   font-weight: 600;
 }
 
-.nav-inner a {
-  transition: color 0.2s ease;
-}
-
-.nav-inner a:hover,
-.nav-inner a.active {
+.nav-inner a:hover {
   color: #2e5bd7;
 }
 
+/* Breadcrumb */
 .breadcrumb-wrap {
   background: #fafafa;
   border-bottom: 1px solid #ececec;
@@ -136,11 +126,13 @@ a {
   color: #444;
 }
 
+/* Main content */
 .page-content {
   padding: 30px 0 80px;
   min-height: 600px;
 }
 
+/* Progress */
 .progress-wrapper {
   display: flex;
   align-items: center;
@@ -177,6 +169,7 @@ a {
   margin: 0 10px;
 }
 
+/* Title */
 .order-title-box {
   display: inline-flex;
   align-items: center;
@@ -207,6 +200,7 @@ a {
   color: #444;
 }
 
+/* Summary */
 .order-summary {
   margin-bottom: 36px;
   color: #444;
@@ -218,6 +212,7 @@ a {
   font-size: 12px;
 }
 
+/* Section */
 .section h3,
 .address-card h3 {
   font-size: 16px;
@@ -234,42 +229,26 @@ a {
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: minmax(260px, 3fr) minmax(120px, 1fr) 100px minmax(140px, 1.2fr);
-  gap: 18px;
+  grid-template-columns: 2.5fr 1fr 0.9fr 1.1fr;
+  gap: 16px;
   align-items: center;
 }
 
 .table-header {
   font-weight: 700;
   font-size: 14px;
+  margin-bottom: 18px;
   color: #444;
-  padding: 0 0 12px;
-  border-bottom: 1px solid #e3e3e3;
 }
 
 .table-row {
   font-size: 14px;
   color: #444;
-  padding: 16px 0;
-  border-bottom: 1px solid #ededed;
-}
-
-.table-header div:nth-child(2),
-.table-row div:nth-child(2),
-.table-header div:nth-child(4),
-.table-row div:nth-child(4) {
-  text-align: right;
-}
-
-.table-header div:nth-child(3),
-.table-row div:nth-child(3) {
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 .order-total {
-  width: 360px;
-  max-width: 100%;
-  margin-top: 18px;
+  width: 280px;
   margin-left: auto;
   display: flex;
   flex-direction: column;
@@ -279,31 +258,16 @@ a {
 }
 
 .order-total div {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  column-gap: 24px;
-}
-
-.order-total span {
-  text-align: right;
-}
-
-.order-total strong {
-  min-width: 120px;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .order-total .grand-total {
-  padding-top: 12px;
-  border-top: 1px solid #d9d9d9;
-}
-
-.order-total .grand-total span,
-.order-total .grand-total strong {
   font-weight: 700;
 }
 
+/* Address */
 .address-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -330,6 +294,7 @@ a {
   color: #444;
 }
 
+/* Footer */
 .site-footer {
   margin-top: 60px;
   background: #fff;
@@ -364,14 +329,9 @@ a {
   color: #555;
   line-height: 1.9;
   margin-bottom: 2px;
-  transition: color 0.2s ease;
 }
 
-.footer-col a:hover,
-.footer-col p:hover {
-  color: #2e5bd7;
-}
-
+/* Responsive */
 @media (max-width: 992px) {
   .top-header {
     flex-wrap: wrap;
@@ -386,12 +346,6 @@ a {
   .nav-inner {
     gap: 20px;
     flex-wrap: wrap;
-  }
-
-  .table-header,
-  .table-row {
-    grid-template-columns: minmax(200px, 2.6fr) minmax(110px, 1fr) 90px minmax(130px, 1.1fr);
-    gap: 14px;
   }
 
   .address-section,
@@ -425,36 +379,15 @@ a {
 
   .table-row {
     grid-template-columns: 1fr;
-    gap: 10px;
     background: #fff;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     padding: 14px;
   }
 
-  .table-row div {
-    text-align: left !important;
-  }
-
   .order-total {
     width: 100%;
-    gap: 12px;
     margin-top: 20px;
-  }
-
-  .order-total div {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-  }
-
-  .order-total span {
-    text-align: left;
-  }
-
-  .order-total strong {
-    min-width: auto;
-    text-align: right;
   }
 
   .address-section,

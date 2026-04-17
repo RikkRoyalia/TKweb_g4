@@ -1,189 +1,185 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hoàn tất đơn hàng - TechStore</title>
-    <link rel="stylesheet" href="./css/Chitietdonhang.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="top-header container">
-        <div class="logo">TechStore</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hoàn tất đơn hàng - TechStore</title>
+  <link rel="stylesheet" href="chitietdonhang.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+</head>
+<body>
+  <header class="site-header">
+    <div class="top-header container">
+      <a href="index.html" class="logo">TechStore</a>.
 
-        <div class="search-box">
-          <input type="text" placeholder="Tìm kiếm sản phẩm" />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-
-        <div class="header-actions">
-          <a href="#" class="header-action">
-            <i class="fa-regular fa-user"></i>
-            <span>Đăng nhập</span>
-          </a>
-          <a href="#" class="header-action">
-            <i class="fa-regular fa-heart"></i>
-            <span>Yêu thích</span>
-          </a>
-          <a href="#" class="header-action">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span>Giỏ hàng</span>
-          </a>
-        </div>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm sản phẩm" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
 
-      <nav class="main-nav">
-        <div class="container nav-inner">
-          <a href="#">Tất cả danh mục</a>
-          <a href="#">Trang chủ</a>
-          <a href="#">Sản phẩm</a>
-          <a href="#">Liên hệ</a>
-        </div>
-      </nav>
-    </header>
-
-    <div class="breadcrumb-wrap">
-      <div class="container breadcrumb">
-        <a href="#">Trang chủ</a>
-        <span>></span>
-        <a href="#">Giỏ hàng</a>
-        <span>></span>
-        <a href="#">Thanh toán</a>
-        <span>></span>
-        <strong>Hoàn tất</strong>
+      <div class="header-actions">
+        <a href="#" class="header-action">
+          <i class="fa-regular fa-user"></i>
+          <span>Đăng nhập</span>
+        </a>
+        <a href="#" class="header-action">
+          <i class="fa-regular fa-heart"></i>
+          <span>Yêu thích</span>
+        </a>
+        <a href="#" class="header-action">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Giỏ hàng</span>
+        </a>
       </div>
     </div>
 
-    <main class="container page-content">
-      <div class="progress-wrapper">
+    <nav class="main-nav">
+    <div class="container nav-inner">
+    <a href="danhmuc.html">Tất cả danh mục</a>
+    <a href="index.html">Trang chủ</a> <a href="danhmuc.html">Sản phẩm</a>
+    <a href="#">Liên hệ</a>
+    </div>
+</nav>
+  </header>
+
+  <div class="breadcrumb-wrap">
+    <div class="container breadcrumb">
+      <a href="#">Trang chủ</a>
+      <span>></span>
+      <a href="#">Giỏ hàng</a>
+      <span>></span>
+      <a href="#">Thanh toán</a>
+      <span>></span>
+      <strong>Hoàn tất</strong>
+    </div>
+  </div>
+
+  <main class="container page-content">
+    <div class="progress-wrapper">
         <div class="progress-step completed">
-          <div class="circle"><i class="fa-solid fa-check"></i></div>
-          <span>Giỏ hàng</span>
+            <div class="circle"><i class="fa-solid fa-check"></i></div>
+            <span>Giỏ hàng</span>
         </div>
-
         <div class="progress-line"></div>
-
         <div class="progress-step completed">
-          <div class="circle"><i class="fa-solid fa-check"></i></div>
-          <span>Giỏ hàng</span>
+            <div class="circle"><i class="fa-solid fa-check"></i></div>
+            <span>Thanh toán</span> 
         </div>
-
         <div class="progress-line"></div>
-
         <div class="progress-step active">
-          <div class="circle">3</div>
-          <span>Hoàn tất</span>
+            <div class="circle">3</div>
+            <span>Hoàn tất</span>
+        </div>
+    </div>
+
+    <div class="order-title-box">
+      <div class="title-icon"><i class="fa-solid fa-check"></i></div>
+      <h2>CHI TIẾT ĐƠN HÀNG</h2>
+    </div>
+
+    <div class="order-summary">
+      <ul>
+        <li><strong>Số đơn hàng:</strong> 123</li>
+        <li><strong>Ngày:</strong> 06/03/2026</li>
+        <li><strong>Tổng cộng:</strong> x.xx.xxx đ</li>
+        <li><strong>Phương thức thanh toán:</strong> Chuyển khoản ngân hàng</li>
+      </ul>
+    </div>
+
+    <section class="section">
+      <h3>CHI TIẾT ĐƠN HÀNG</h3>
+
+      <div class="order-table">
+        <div class="table-header">
+          <div>Sản phẩm</div>
+          <div>Đơn giá</div>
+          <div>Số lượng</div>
+          <div>Thành tiền</div>
+        </div>
+
+        <div class="table-row">
+          <div>Tên sản phẩm</div>
+          <div>x.xxx.xxx đ</div>
+          <div>1</div>
+          <div>x.xxx.xxx đ</div>
         </div>
       </div>
 
-      <div class="order-title-box">
-        <div class="title-icon"><i class="fa-solid fa-check"></i></div>
-        <h2>CHI TIẾT ĐƠN HÀNG</h2>
+      <div class="order-total">
+        <div><span>Giá sản phẩm:</span><strong>x.xxx.xxx đ</strong></div>
+        <div><span>Phí vận chuyển:</span><strong>xx.xxx đ</strong></div>
+        <div class="grand-total"><span>Tổng tiền:</span><strong>x.xxx.xxx đ</strong></div>
+      </div>
+    </section>
+
+    <section class="address-section">
+      <div class="address-card">
+        <h3>ĐỊA CHỈ NHẬN THANH TOÁN</h3>
+        <div class="card-box">
+          <div class="card-status">Trạng thái thanh toán: Hoàn thành</div>
+          <div class="card-content">
+            <p>Khách hàng 1</p>
+            <p>09565663231</p>
+            <p>Hà Đông, Hà Nội</p>
+          </div>
+        </div>
       </div>
 
-      <div class="order-summary">
-        <ul>
-          <li><strong>Số đơn hàng:</strong> 123</li>
-          <li><strong>Ngày:</strong> 06/03/2026</li>
-          <li><strong>Tổng cộng:</strong> x.xx.xxx đ</li>
-          <li>
-            <strong>Phương thức thanh toán:</strong> Chuyển khoản ngân hàng
-          </li>
-        </ul>
-      </div>
-
-      <section class="section">
-        <h3>CHI TIẾT ĐƠN HÀNG</h3>
-
-        <div class="order-table">
-          <div class="table-header">
-            <div>Sản phẩm</div>
-            <div>Đơn giá</div>
-            <div>Số lượng</div>
-            <div>Thành tiền</div>
+      <div class="address-card">
+        <h3>ĐỊA CHỈ GỬI HÀNG</h3>
+        <div class="card-box">
+          <div class="card-status">Đã giao cho đơn vị vận chuyển: Chưa giao hàng</div>
+          <div class="card-content">
+            <p>TechStore</p>
+            <p>1900 xxxx</p>
+            <p>Hai Bà Trưng, Hà Nội</p>
           </div>
-
-          <div class="table-row">
-            <div>Tên sản phẩm</div>
-            <div>x.xxx.xxx đ</div>
-            <div>1</div>
-            <div>x.xxx.xxx đ</div>
-          </div>
-        </div>
-
-        <div class="order-total">
-          <div><span>Giá sản phẩm:</span><strong>x.xxx.xxx đ</strong></div>
-          <div><span>Phí vận chuyển:</span><strong>xx.xxx đ</strong></div>
-          <div class="grand-total">
-            <span>Tổng tiền:</span><strong>x.xxx.xxx đ</strong>
-          </div>
-        </div>
-      </section>
-
-      <section class="address-section">
-        <div class="address-card">
-          <h3>ĐỊA CHỈ NHẬN THANH TOÁN</h3>
-          <div class="card-box">
-            <div class="card-status">Trạng thái thanh toán: Hoàn thành</div>
-            <div class="card-content">
-              <p>Khách hàng 1</p>
-              <p>09565663231</p>
-              <p>Hà Đông, Hà Nội</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="address-card">
-          <h3>ĐỊA CHỈ GỬI HÀNG</h3>
-          <div class="card-box">
-            <div class="card-status">
-              Đã giao cho đơn vị vận chuyển: Chưa giao hàng
-            </div>
-            <div class="card-content">
-              <p>TechStore</p>
-              <p>1900 xxxx</p>
-              <p>Hai Bà Trưng, Hà Nội</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-col brand-col">
-          <div class="footer-logo">TechStore</div>
-          <p>Hệ thống bán lẻ thiết bị điện tử chính hãng</p>
-          <p>hàng đầu</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Thông tin</h4>
-          <a href="#">Giới thiệu</a>
-          <a href="#">Tuyển dụng</a>
-          <a href="#">Chính sách bảo mật</a>
-        </div>
-
-        <div class="footer-col">
-          <h4>Hỗ trợ khách hàng</h4>
-          <a href="#">Hướng dẫn mua hàng</a>
-          <a href="#">Chính sách đổi trả</a>
-          <a href="#">Chính sách bảo hành</a>
-        </div>
-
-        <div class="footer-col">
-          <h4>Liên hệ</h4>
-          <p>Hotline: 1900 xxxx</p>
-          <p>Email: cskh@techstore.vn</p>
-          <p>Hà Nội, Việt Nam</p>
         </div>
       </div>
-    </footer>
+    </section>
+    <div style="text-align: center; margin-top: 40px;">
+    <a href="danhmuc.html" 
+       style="padding: 15px 30px; background: #3f6fe5; color: white; border-radius: 8px; font-weight: bold; text-decoration: none;">
+       QUAY LẠI TRANG CHỦ MUA SẮM TIẾP
+    </a>
+</div>
+  </main>
 
-    <script src="../js/chitietdonhang.js"></script>
-  </body>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">TechStore</div>
+        <p>Hệ thống bán lẻ thiết bị điện tử chính hãng</p>
+        <p>hàng đầu</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Thông tin</h4>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Tuyển dụng</a>
+        <a href="#">Chính sách bảo mật</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hỗ trợ khách hàng</h4>
+        <a href="#">Hướng dẫn mua hàng</a>
+        <a href="#">Chính sách đổi trả</a>
+        <a href="#">Chính sách bảo hành</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Liên hệ</h4>
+        <p>Hotline: 1900 xxxx</p>
+        <p>Email: cskh@techstore.vn</p>
+        <p>Hà Nội, Việt Nam</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="chitietdonhang.js"></script>
+  <script src="common.js"></script>
+</body>
 </html>

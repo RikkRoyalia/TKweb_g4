@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Giỏ hàng</title>
+    <link rel="stylesheet" href="cart.CSS">
+</head>
+<body>
+    <header class="header">
+        <div class="header-main">
+            <div class="logo">TechStore</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm sản phẩm">
+                <button>🔍</button>
+            </div>
+            <div class="user-actions">
+                <div class="action-item">
+                    <span class="icon">👤</span>
+                    <span>Đăng nhập</span>
+                </div>
+                <div class="action-item">
+                    <span class="icon">🤍</span>
+                    <span>Yêu thích</span>
+                </div>
+                <a href="cart.html" class="action-item">
+                    <span class="icon">🛒</span>
+                    <span>Giỏ hàng</span>
+                </a>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <a href="danhmuc.html">Tất cả danh mục</a>
+            <a href="index.html">Trang chủ</a> 
+            <a href="danhmuc.html">Sản phẩm</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+
+    <div class="cart-wrapper">
+        <div class="breadcrumb">Trang chủ > <strong>Giỏ hàng</strong></div>
+        
+        <div class="stepper">
+            <div class="step active"><span class="circle">1</span> Giỏ hàng</div>
+            <div class="step-line"></div>
+            <div class="step"><span class="circle">2</span> Đặt hàng</div>
+            <div class="step-line"></div>
+            <div class="step"><span class="circle">3</span> Hoàn tất</div>
+        </div>
+
+        <div id="empty-cart" class="box empty-state">
+            <h3>Giỏ hàng đang trống!</h3>
+            <p>Thêm sản phẩm vào giỏ và quay lại đây nhé.</p>
+            <a href="danhmuc.html" class="shop-now-btn">Tiếp tục mua sắm</a>
+        </div>  
+
+        <div id="cart-content" class="cart-grid">
+            <div class="cart-left">
+                <div class="box product-list-box" id="product-list">
+                    </div>
+                <a href="danhmuc.html" class="continue-shopping">← Tiếp tục mua sắm</a>
+            </div>
+
+            <div class="cart-right">
+                <div class="box summary-box">
+                    <h3 class="summary-title">Tổng đơn hàng</h3>
+                    
+                    <div class="coupon-label">Mã giảm giá</div>
+                    <div class="coupon-section">
+                        <input type="text" id="coupon-input" placeholder="">
+                        <button onclick="applyCoupon()">Áp dụng</button>
+                    </div>
+                    <p id="coupon-msg" class="coupon-msg"></p>
+
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Tạm tính:</span>
+                            <span id="subtotal" class="font-bold">0 đ</span>
+                        </div>
+                        <div class="summary-row" id="discount-row" style="display: none;">
+                            <span>Giảm giá:</span>
+                            <span id="discount-amount" style="color: var(--danger-color);">-0 đ</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Phí vận chuyển:</span>
+                            <span id="shipping-fee" class="free-shipping">Miễn phí</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-row total">
+                        <span>Tổng cộng :</span>
+                        <span id="final-total" class="total-price">0 đ</span>
+                    </div>
+
+                    <button class="checkout-btn" onclick="checkout()">Thanh toán</button>
+
+                    <ul class="benefits-list">
+                        <li>Bảo hành chính hãng toàn quốc</li>
+                        <li>Đổi trả miễn phí trong 7 ngày</li>
+                        <li>Thanh toán an toàn & bảo mật</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-col">
+            <div class="logo">TechStore</div>
+            <p>Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Thông tin</h4>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Tuyển dụng</a>
+            <a href="#">Chính sách bảo mật</a>
+        </div>
+        <div class="footer-col">
+            <h4>Hỗ trợ khách hàng</h4>
+            <a href="#">Hướng dẫn mua hàng</a>
+            <a href="#">Chính sách đổi trả</a>
+            <a href="#">Chính sách bảo hành</a>
+        </div>
+        <div class="footer-col">
+            <h4>Liên hệ</h4>
+            <p>Hotline: 1900 xxxx</p>
+            <p>Email: cskh@techstore.vn</p>
+            <p>Hà Nội, Việt Nam</p>
+        </div>
+    </footer>
+
+    <script src="cart.JS"></script>
+    <script src="common.js"></script>
+</body>
+</html>

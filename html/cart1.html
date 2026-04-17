@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Thanh toán</title>
+    <link rel="stylesheet" href="cart1.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-main">
+            <div class="logo">TechStore</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm sản phẩm">
+                <button>🔍</button>
+            </div>
+            <div class="user-actions">
+                <div class="action-item">
+                <span class="icon">👤</span><span>Đăng nhập</span>
+            </div>
+    <div class="action-item">
+        <span class="icon">🤍</span><span>Yêu thích</span>
+    </div>
+    <a href="cart.html" class="action-item">
+        <span class="icon">🛒</span><span>Giỏ hàng</span>
+    </a>
+</div>
+ 
+<nav class="header-nav">
+    <a href="danhmuc.html">Tất cả danh mục</a>
+    <a href="index.html">Trang chủ</a> 
+    <a href="danhmuc.html">Sản phẩm</a>
+    <a href="#">Liên hệ</a>
+</nav>
+    </header>
+
+    <div class="checkout-wrapper">
+        <div class="breadcrumb">Trang chủ > Giỏ hàng > <strong>Thanh toán</strong></div>
+        
+        <div class="stepper">
+            <div class="step completed"><span class="circle check">✓</span> Giỏ hàng</div>
+            <div class="step-line active-line"></div>
+            <div class="step active"><span class="circle">2</span> Thanh toán</div>
+            <div class="step-line"></div>
+            <div class="step"><span class="circle gray">3</span> Hoàn tất</div>
+        </div>
+
+        <div class="checkout-grid">
+            <div class="checkout-left">
+                <div class="box">
+                    <h2 class="section-title"><span class="step-num">1</span> Thông tin khách hàng</h2>
+                    <div class="form-group full-width">
+                        <label>Họ và tên <span class="required">*</span></label>
+                        <input type="text" id="fullname" placeholder="Nhập họ và tên">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Số điện thoại <span class="required">*</span></label>
+                            <input type="tel" id="phone" placeholder="0912 345 678">
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" id="email" placeholder="example@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Địa chỉ <span class="required">*</span></label>
+                        <input type="text" id="address" placeholder="Số nhà, tên đường">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tỉnh/Thành phố <span class="required">*</span></label>
+                            <input type="text" id="city" placeholder="Chọn tỉnh/thành">
+                        </div>
+                        <div class="form-group">
+                            <label>Phường/Xã <span class="required">*</span></label>
+                            <input type="text" id="ward" placeholder="Chọn phường/xã">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2 class="section-title"><span class="step-num">2</span> Phương thức giao hàng</h2>
+                    <div class="radio-group">
+                        <label class="radio-box active" onclick="selectRadio(this, 'shipping', 30000)">
+                            <div class="radio-content">
+                                <input type="radio" name="shipping" checked>
+                                <span class="custom-radio"></span>
+                                <div>
+                                    <div class="radio-title">Giao hàng tiêu chuẩn</div>
+                                    <div class="radio-desc">Từ 3 - 5 ngày làm việc</div>
+                                </div>
+                            </div>
+                            <div class="radio-price">30.000 đ</div>
+                        </label>
+                        <label class="radio-box" onclick="selectRadio(this, 'shipping', 50000)">
+                            <div class="radio-content">
+                                <input type="radio" name="shipping">
+                                <span class="custom-radio"></span>
+                                <div>
+                                    <div class="radio-title">Giao hàng nhanh</div>
+                                    <div class="radio-desc">Từ 1 - 2 ngày làm việc</div>
+                                </div>
+                            </div>
+                            <div class="radio-price">50.000 đ</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h2 class="section-title"><span class="step-num">3</span> Phương thức thanh toán</h2>
+                    <div class="radio-group">
+                        <label class="radio-box active" onclick="selectRadio(this, 'payment')">
+                            <div class="radio-content">
+                                <input type="radio" name="payment" checked>
+                                <span class="custom-radio"></span>
+                                <div>
+                                    <div class="radio-title">Thanh toán khi nhận hàng (COD)</div>
+                                    <div class="radio-desc">Thanh toán bằng tiền mặt khi nhận hàng</div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="radio-box" onclick="selectRadio(this, 'payment')">
+                            <div class="radio-content">
+                                <input type="radio" name="payment">
+                                <span class="custom-radio"></span>
+                                <div>
+                                    <div class="radio-title">Chuyển khoản ngân hàng</div>
+                                    <div class="radio-desc">Chuyển khoản qua tài khoản ngân hàng</div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="radio-box" onclick="selectRadio(this, 'payment')">
+                            <div class="radio-content">
+                                <input type="radio" name="payment">
+                                <span class="custom-radio"></span>
+                                <div>
+                                    <div class="radio-title">Thẻ tín dụng / Thẻ ghi nợ</div>
+                                    <div class="radio-desc">Thanh toán qua cổng thanh toán an toàn</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-right">
+                <div class="box summary-box">
+                    <h3 class="summary-title">Đơn hàng của bạn</h3>
+                    
+                    <div id="checkout-items" class="checkout-items-list">
+                        </div>
+
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Tạm tính:</span>
+                            <span id="checkout-subtotal" class="font-bold">0 đ</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Phí vận chuyển:</span>
+                            <span id="checkout-shipping">30.000 đ</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-row total">
+                        <span>Tổng cộng :</span>
+                        <span id="checkout-final" class="total-price">0 đ</span>
+                    </div>
+
+                    <button class="place-order-btn" onclick="placeOrder()">Đặt hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     <footer class="footer">
+        <div class="footer-col">
+            <div class="logo">TechStore</div>
+            <p>Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Thông tin</h4>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Tuyển dụng</a>
+            <a href="#">Chính sách bảo mật</a>
+        </div>
+        <div class="footer-col">
+            <h4>Hỗ trợ khách hàng</h4>
+            <a href="#">Hướng dẫn mua hàng</a>
+            <a href="#">Chính sách đổi trả</a>
+            <a href="#">Chính sách bảo hành</a>
+        </div>
+        <div class="footer-col">
+            <h4>Liên hệ</h4>
+            <p>Hotline: 1900 xxxx</p>
+            <p>Email: cskh@techstore.vn</p>
+            <p>Hà Nội, Việt Nam</p>
+        </div>
+    </footer>
+    
+    <script src="cart1.JS"></script>
+    <script src="common.js"></script>
+</body>
+</html>
