@@ -11,7 +11,7 @@ document.querySelectorAll("nav a").forEach((item) => {
 // bread-crumbs
 document.querySelectorAll("nav a").forEach((item) => {
   item.addEventListener("click", function (e) {
-    e.preventDefault();
+    // e.preventDefault();
     // remove active cũ
     document
       .querySelectorAll("nav a")
