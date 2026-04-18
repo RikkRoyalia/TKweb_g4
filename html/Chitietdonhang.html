@@ -24,9 +24,10 @@
       }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-800">
+  <body>
+    <!-- ========== HEADER ========== -->
     <header
-      class="sticky top-0 z-50 bg-white border-b border-[#e5e7eb] pt-[20px]"
+      class="sticky top-0 z-50 bg-gradient-to-b from-white/90 via-white/60 to-transparent border-b border-[#e5e7eb] pt-[20px]"
     >
       <div
         class="w-full max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-y-3 pb-[20px] px-4"
@@ -105,122 +106,153 @@
       </nav>
     </header>
 
+    <!-- ========== BREADCRUMB ========== -->
     <div class="breadcrumb-wrap">
       <div class="container breadcrumb">
         <a href="index.html">Trang chủ</a>
-        <span>></span>
+        <span>›</span>
         <a href="cart.html">Giỏ hàng</a>
-        <span>></span>
-        <strong>Hoàn tất</strong>
+        <span>›</span>
+        <strong>Hoàn tất đơn hàng</strong>
       </div>
     </div>
 
+    <!-- ========== MAIN ========== -->
     <main class="container page-content">
+      <!-- Stepper -->
       <div class="progress-wrapper">
         <div class="progress-step completed">
           <div class="circle"><i class="fa-solid fa-check"></i></div>
           <span>Giỏ hàng</span>
         </div>
-        <div class="progress-line"></div>
+        <div class="progress-line done"></div>
         <div class="progress-step completed">
           <div class="circle"><i class="fa-solid fa-check"></i></div>
           <span>Thanh toán</span>
         </div>
-        <div class="progress-line"></div>
+        <div class="progress-line done"></div>
         <div class="progress-step active">
-          <div class="circle">3</div>
+          <div class="circle"><i class="fa-solid fa-check"></i></div>
           <span>Hoàn tất</span>
         </div>
       </div>
 
-      <div class="order-title-box">
-        <div class="title-icon"><i class="fa-solid fa-check"></i></div>
-        <h2>CHI TIẾT ĐƠN HÀNG</h2>
+      <!-- Success Banner -->
+      <div class="success-banner">
+        <div class="success-icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div>
+          <h2>Đặt hàng thành công!</h2>
+          <p>
+            Cảm ơn bạn đã tin tưởng TechStore. Chúng tôi sẽ xử lý đơn hàng ngay.
+          </p>
+        </div>
       </div>
 
-      <div class="order-summary">
-        <ul>
-          <li><strong>Số đơn hàng:</strong> 123</li>
-          <li><strong>Ngày:</strong> 06/03/2026</li>
-          <li><strong>Tổng cộng:</strong> x.xx.xxx đ</li>
-          <li>
-            <strong>Phương thức thanh toán:</strong> Chuyển khoản ngân hàng
-          </li>
-        </ul>
+      <!-- Order Meta -->
+      <div class="order-meta-grid">
+        <div class="meta-card">
+          <div class="meta-label">
+            <i class="fa-solid fa-hashtag" style="margin-right: 4px"></i>Mã đơn
+            hàng
+          </div>
+          <div class="meta-value blue" id="meta-orderid">#—</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">
+            <i class="fa-regular fa-calendar" style="margin-right: 4px"></i>Ngày
+            đặt
+          </div>
+          <div class="meta-value" id="meta-date">—</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">
+            <i class="fa-solid fa-wallet" style="margin-right: 4px"></i>Thanh
+            toán
+          </div>
+          <div class="meta-value" id="meta-payment" style="font-size: 13px">
+            —
+          </div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">
+            <i class="fa-solid fa-coins" style="margin-right: 4px"></i>Tổng tiền
+          </div>
+          <div class="meta-value green" id="meta-total">—</div>
+        </div>
       </div>
 
-      <section class="section">
-        <h3>CHI TIẾT ĐƠN HÀNG</h3>
-        <div class="order-table">
-          <div class="table-header">
-            <div>Sản phẩm</div>
-            <div>Đơn giá</div>
-            <div>Số lượng</div>
-            <div>Thành tiền</div>
-          </div>
-          <div class="table-row">
-            <div>Tên sản phẩm</div>
-            <div>x.xxx.xxx đ</div>
-            <div>1</div>
-            <div>x.xxx.xxx đ</div>
-          </div>
+      <!-- Chi tiết sản phẩm -->
+      <div class="card">
+        <div class="card-head">
+          <div class="icon"><i class="fa-solid fa-box-open"></i></div>
+          <h3>Chi tiết sản phẩm</h3>
         </div>
-        <div class="order-total">
-          <div><span>Giá sản phẩm:</span><strong>x.xxx.xxx đ</strong></div>
-          <div><span>Phí vận chuyển:</span><strong>xx.xxx đ</strong></div>
-          <div class="grand-total">
-            <span>Tổng tiền:</span><strong>x.xxx.xxx đ</strong>
-          </div>
+        <div class="order-table-wrap">
+          <table class="order-table">
+            <thead>
+              <tr>
+                <th>Sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+              </tr>
+            </thead>
+            <tbody id="order-items-tbody">
+              <!-- JS render -->
+            </tbody>
+          </table>
         </div>
-      </section>
+        <div class="order-total-box" id="order-total-box">
+          <!-- JS render -->
+        </div>
+      </div>
 
-      <section class="address-section">
-        <div class="address-card">
-          <h3>ĐỊA CHỈ NHẬN THANH TOÁN</h3>
-          <div class="card-box">
-            <div class="card-status">Trạng thái thanh toán: Hoàn thành</div>
-            <div class="card-content">
-              <p>Khách hàng 1</p>
-              <p>09565663231</p>
-              <p>Hà Đông, Hà Nội</p>
-            </div>
+      <!-- Địa chỉ -->
+      <div class="address-grid">
+        <div class="addr-card">
+          <div class="addr-head">
+            <div class="icon blue"><i class="fa-solid fa-user"></i></div>
+            <h4>Thông tin người nhận</h4>
+          </div>
+          <div class="addr-status paid">
+            <i class="fa-solid fa-circle-check"></i> Thanh toán: Hoàn thành
+          </div>
+          <div class="addr-body" id="customer-addr">
+            <!-- JS render -->
           </div>
         </div>
-        <div class="address-card">
-          <h3>ĐỊA CHỈ GỬI HÀNG</h3>
-          <div class="card-box">
-            <div class="card-status">
-              Đã giao cho đơn vị vận chuyển: Chưa giao hàng
-            </div>
-            <div class="card-content">
-              <p>TechStore</p>
-              <p>1900 xxxx</p>
-              <p>Hai Bà Trưng, Hà Nội</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <div style="text-align: center; margin-top: 40px">
-        <a
-          href="index.html"
-          style="
-            padding: 15px 30px;
-            background: #3f6fe5;
-            color: white;
-            border-radius: 8px;
-            font-weight: bold;
-            text-decoration: none;
-          "
-        >
-          QUAY LẠI TRANG CHỦ MUA SẮM TIẾP
+        <div class="addr-card">
+          <div class="addr-head">
+            <div class="icon green"><i class="fa-solid fa-truck"></i></div>
+            <h4>Địa chỉ giao hàng</h4>
+          </div>
+          <div class="addr-status pending">
+            <i class="fa-solid fa-clock"></i> Vận chuyển: Đang xử lý
+          </div>
+          <div class="addr-body">
+            <strong>TechStore</strong>
+            <span>Hotline: 1900 xxxx</span>
+            <span>Hai Bà Trưng, Hà Nội</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-wrap">
+        <a href="index.html" class="cta-btn">
+          <i class="fa-solid fa-arrow-left"></i>
+          Tiếp tục mua sắm
         </a>
       </div>
     </main>
 
+    <!-- ========== FOOTER ========== -->
     <footer class="footer">
       <div class="footer-col">
-        <div class="logo">TechStore</div>
+        <span class="logo">TechStore</span>
         <p>Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.</p>
       </div>
       <div class="footer-col">
@@ -242,59 +274,58 @@
         <p>Hà Nội, Việt Nam</p>
       </div>
     </footer>
-    <style>
-      .footer {
-        background: #fff;
-        display: flex;
-        justify-content: space-between;
-        max-width: 1200px;
-        margin: 40px auto 0;
-        border-top: 1px solid #e5e7eb;
-        padding: 40px 20px;
-      }
-      .footer-col {
-        flex: 1;
-        padding: 0 20px;
-      }
-      .footer-col .logo {
-        margin-bottom: 16px;
-        color: #1d4ed8;
-        font-size: 24px;
-        font-weight: 800;
-      }
-      .footer-col p,
-      .footer-col a {
-        display: block;
-        font-size: 13px;
-        color: #6b7280;
-        margin-bottom: 10px;
-      }
-      .footer-col a:hover {
-        color: #1d4ed8;
-      }
-      .footer-col h4 {
-        font-size: 15px;
-        font-weight: 600;
-        margin-bottom: 16px;
-        color: #1f2937;
-      }
-      @media (max-width: 768px) {
-        .footer {
-          flex-wrap: wrap;
-          gap: 20px;
-        }
-        .footer-col {
-          flex: 1 1 calc(50% - 16px);
-          padding: 0;
-        }
-      }
-      @media (max-width: 480px) {
-        .footer-col {
-          flex: 1 1 100%;
-        }
-      }
-    </style>
-    <script src="../js/chitietdonhang.js"></script>
+
     <script src="../js/common.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const orderData = JSON.parse(localStorage.getItem("LATEST_ORDER"));
+
+        if (!orderData) {
+          alert("Dữ liệu đơn hàng không tồn tại!");
+          window.location.href = "cart.html";
+          return;
+        }
+
+        const fmt = (n) => n.toLocaleString("vi-VN") + " đ";
+
+        // Meta cards
+        document.getElementById("meta-orderid").textContent =
+          "#" + orderData.orderId;
+        document.getElementById("meta-date").textContent = orderData.date;
+        document.getElementById("meta-payment").textContent =
+          orderData.paymentMethod;
+        document.getElementById("meta-total").textContent = fmt(
+          orderData.total,
+        );
+
+        // Bảng sản phẩm
+        const tbody = document.getElementById("order-items-tbody");
+        orderData.items.forEach((item) => {
+          tbody.innerHTML += `
+            <tr>
+              <td style="font-weight:600">${item.name}</td>
+              <td>${fmt(item.price)}</td>
+              <td><span class="qty-badge">×${item.quantity}</span></td>
+              <td>${fmt(item.price * item.quantity)}</td>
+            </tr>`;
+        });
+
+        // Tổng tiền
+        document.getElementById("order-total-box").innerHTML = `
+          <div class="total-row"><span>Giá sản phẩm</span><span>${fmt(orderData.subtotal)}</span></div>
+          <div class="total-row"><span>Phí vận chuyển</span><span>${fmt(orderData.shippingFee)}</span></div>
+          <div class="total-row grand"><span>Tổng thanh toán</span><span>${fmt(orderData.total)}</span></div>
+        `;
+
+        // Thông tin khách hàng
+        const c = orderData.customer;
+        document.getElementById("customer-addr").innerHTML = `
+          <strong>${c.fullname}</strong>
+          <span>${c.phone}</span>
+          ${c.email ? `<span>${c.email}</span>` : ""}
+          <span>${c.address}${c.ward ? ", " + c.ward : ""}${c.city ? ", " + c.city : ""}</span>
+        `;
+      });
+    </script>
   </body>
 </html>
