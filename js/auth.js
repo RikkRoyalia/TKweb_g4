@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     authArea.innerHTML = `
             <div class="flex flex-col items-center justify-start">
                 <div class="flex flex-col items-center text-[13px] text-[#1f2937] hover:text-[#2563eb] cursor-pointer">
-                    <span class="text-[22px] mb-[4px]">👤</span>
+                    <span class="text-[22px] mb-[4px]"><i class="fa-regular fa-user"></i></span>
                     <span class="font-medium whitespace-nowrap">${activeUser}</span>
                 </div>
                 <button onclick="window.xuLyDangXuat()" 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     authArea.innerHTML = `
             <a href="login.html"
                class="flex flex-col items-center text-[13px] text-[#1f2937] hover:text-[#2563eb] transition-colors">
-                <span class="text-[22px] mb-[4px]">👤</span>
+                <span class="text-[22px] mb-[4px]"><i class="fa-regular fa-user"></i></span>
                 <span class="font-medium whitespace-nowrap">Đăng nhập</span>
             </a>
         `;
