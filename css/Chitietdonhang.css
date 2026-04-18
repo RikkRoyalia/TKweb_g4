@@ -510,9 +510,9 @@ a {
   background: #fff;
   display: flex;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 2560px;
   margin: 40px auto 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-color);
   padding: 40px 20px;
 }
 .footer-col {
@@ -523,7 +523,7 @@ a {
   font-size: 22px;
   font-weight: 800;
   color: var(--blue-dark);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   display: block;
 }
 .footer-col p,
