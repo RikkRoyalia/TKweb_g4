@@ -20,7 +20,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .auth-container {
@@ -114,4 +115,59 @@ body {
 .msg.success {
   color: var(--success-color);
   display: block;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+/* Mobile: 480px */
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .auth-container {
+    padding: 0;
+  }
+
+  .auth-box {
+    padding: 28px 20px;
+    border-radius: 10px;
+  }
+
+  .auth-logo {
+    font-size: 24px;
+  }
+
+  .auth-subtitle {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .input-group input {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .auth-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .auth-link {
+    font-size: 13px;
+  }
+}
+
+/* Màn hình rất nhỏ: 360px */
+@media (max-width: 360px) {
+  .auth-box {
+    padding: 24px 16px;
+  }
+  .auth-logo {
+    font-size: 22px;
+  }
 }

@@ -4,19 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechStore - Giỏ hàng</title>
-
     <script src="../js/auth.js"></script>
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="../css/cart.css" />
-    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
-      /* Custom scrollbar cho đẹp gọn */
       ::-webkit-scrollbar {
         width: 6px;
       }
@@ -34,14 +29,16 @@
       class="sticky top-0 z-50 bg-white border-b border-[#e5e7eb] pt-[20px]"
     >
       <div
-        class="w-[1200px] mx-auto flex items-center justify-between pb-[20px] px-4 sm:px-0"
+        class="w-full max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-y-3 pb-[20px] px-4"
       >
-        <a href="index.html" class="text-[28px] font-[800] text-[#1d4ed8]">
-          TechStore
-        </a>
+        <a
+          href="index.html"
+          class="text-[28px] font-[800] text-[#1d4ed8] shrink-0"
+          >TechStore</a
+        >
 
         <div
-          class="flex bg-[#f3f4f6] rounded-full px-[24px] py-[12px] w-[500px]"
+          class="flex bg-[#f3f4f6] rounded-full px-[16px] py-[8px] order-3 w-full sm:order-2 sm:flex-1 sm:mx-4 sm:max-w-[500px]"
         >
           <input
             type="text"
@@ -55,7 +52,7 @@
           </button>
         </div>
 
-        <div class="flex items-start gap-[40px]">
+        <div class="flex items-start gap-[20px] order-2 sm:order-3 shrink-0">
           <div id="auth-area">
             <a
               href="login.html"
@@ -64,19 +61,21 @@
               <span class="text-[22px] mb-[4px]"
                 ><i class="fa-regular fa-user"></i
               ></span>
-              <span class="font-medium whitespace-nowrap">Đăng nhập</span>
+              <span class="font-medium whitespace-nowrap hidden sm:inline"
+                >Đăng nhập</span
+              >
             </a>
           </div>
-
           <div
             class="flex flex-col items-center text-[13px] text-[#1f2937] cursor-pointer hover:text-[#fc0303] transition-colors"
           >
             <span class="text-[22px] mb-[4px]"
               ><i class="fa-regular fa-heart"></i
             ></span>
-            <span class="font-medium whitespace-nowrap">Yêu thích</span>
+            <span class="font-medium whitespace-nowrap hidden sm:inline"
+              >Yêu thích</span
+            >
           </div>
-
           <a
             href="cart.html"
             class="flex flex-col items-center text-[13px] text-[#1f2937] hover:text-[#149e02] transition-colors"
@@ -84,13 +83,15 @@
             <span class="text-[22px] mb-[4px]"
               ><i class="fa-solid fa-shopping-cart"></i
             ></span>
-            <span class="font-medium whitespace-nowrap">Giỏ hàng</span>
+            <span class="font-medium whitespace-nowrap hidden sm:inline"
+              >Giỏ hàng</span
+            >
           </a>
         </div>
       </div>
 
       <nav
-        class="w-[1200px] mx-auto flex justify-center gap-[48px] py-[16px] px-4 sm:px-0 text-[15px] font-[600] text-[#4b5563] border-t border-[#f3f4f6]"
+        class="w-full max-w-[1200px] mx-auto flex justify-center gap-[32px] sm:gap-[48px] py-[12px] sm:py-[16px] px-4 text-[13px] sm:text-[15px] font-[600] text-[#4b5563] border-t border-[#f3f4f6]"
       >
         <a href="index.html" class="hover:text-[#2563eb] transition-colors"
           >Trang chủ</a
@@ -103,9 +104,9 @@
         >
       </nav>
     </header>
+
     <div class="cart-wrapper">
       <div class="breadcrumb">Trang chủ > <strong>Giỏ hàng</strong></div>
-
       <div class="stepper">
         <div class="step active"><span class="circle">1</span> Giỏ hàng</div>
         <div class="step-line"></div>
@@ -127,18 +128,15 @@
             >← Tiếp tục mua sắm</a
           >
         </div>
-
         <div class="cart-right">
           <div class="box summary-box">
             <h3 class="summary-title">Tổng đơn hàng</h3>
-
             <div class="coupon-label">Mã giảm giá</div>
             <div class="coupon-section">
               <input type="text" id="coupon-input" placeholder="" />
               <button onclick="applyCoupon()">Áp dụng</button>
             </div>
             <p id="coupon-msg" class="coupon-msg"></p>
-
             <div class="summary-details">
               <div class="summary-row">
                 <span>Tạm tính:</span>
@@ -155,16 +153,13 @@
                 <span id="shipping-fee" class="free-shipping">Miễn phí</span>
               </div>
             </div>
-
             <div class="summary-row total">
               <span>Tổng cộng :</span>
               <span id="final-total" class="total-price">0 đ</span>
             </div>
-
             <button class="checkout-btn" onclick="checkout()">
               Thanh toán
             </button>
-
             <ul class="benefits-list">
               <li>Bảo hành chính hãng toàn quốc</li>
               <li>Đổi trả miễn phí trong 7 ngày</li>
@@ -207,8 +202,7 @@
         max-width: 2560px;
         margin: 40px auto 0;
         border-top: 1px solid var(--border-color);
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding: 40px 20px;
       }
       .footer-col {
         flex: 1;
@@ -232,6 +226,21 @@
         font-weight: 600;
         margin-bottom: 16px;
         color: var(--text-main);
+      }
+      @media (max-width: 768px) {
+        .footer {
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+        .footer-col {
+          flex: 1 1 calc(50% - 16px);
+          padding: 0;
+        }
+      }
+      @media (max-width: 480px) {
+        .footer-col {
+          flex: 1 1 100%;
+        }
       }
     </style>
     <script src="../js/cart.js"></script>

@@ -4,17 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechStore - Danh mục sản phẩm chi tiết</title>
-
     <script src="../js/auth.js"></script>
-
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
-      /* Custom scrollbar cho đẹp gọn */
       ::-webkit-scrollbar {
         width: 6px;
       }
@@ -32,14 +28,16 @@
       class="sticky top-0 z-50 bg-white border-b border-[#e5e7eb] pt-[20px]"
     >
       <div
-        class="w-[1200px] mx-auto flex items-center justify-between pb-[20px] px-4 sm:px-0"
+        class="w-full max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-y-3 pb-[20px] px-4"
       >
-        <a href="index.html" class="text-[28px] font-[800] text-[#1d4ed8]">
-          TechStore
-        </a>
+        <a
+          href="index.html"
+          class="text-[28px] font-[800] text-[#1d4ed8] shrink-0"
+          >TechStore</a
+        >
 
         <div
-          class="flex bg-[#f3f4f6] rounded-full px-[24px] py-[12px] w-[500px]"
+          class="flex bg-[#f3f4f6] rounded-full px-[16px] py-[8px] order-3 w-full sm:order-2 sm:flex-1 sm:mx-4 sm:max-w-[500px]"
         >
           <input
             type="text"
@@ -53,7 +51,7 @@
           </button>
         </div>
 
-        <div class="flex items-start gap-[40px]">
+        <div class="flex items-start gap-[20px] order-2 sm:order-3 shrink-0">
           <div id="auth-area">
             <a
               href="login.html"
@@ -62,19 +60,21 @@
               <span class="text-[22px] mb-[4px]"
                 ><i class="fa-regular fa-user"></i
               ></span>
-              <span class="font-medium whitespace-nowrap">Đăng nhập</span>
+              <span class="font-medium whitespace-nowrap hidden sm:inline"
+                >Đăng nhập</span
+              >
             </a>
           </div>
-
           <div
             class="flex flex-col items-center text-[13px] text-[#1f2937] cursor-pointer hover:text-[#fc0303] transition-colors"
           >
             <span class="text-[22px] mb-[4px]"
               ><i class="fa-regular fa-heart"></i
             ></span>
-            <span class="font-medium whitespace-nowrap">Yêu thích</span>
+            <span class="font-medium whitespace-nowrap hidden sm:inline"
+              >Yêu thích</span
+            >
           </div>
-
           <a
             href="cart.html"
             class="flex flex-col items-center text-[13px] text-[#1f2937] hover:text-[#149e02] transition-colors"
@@ -82,13 +82,15 @@
             <span class="text-[22px] mb-[4px]"
               ><i class="fa-solid fa-shopping-cart"></i
             ></span>
-            <span class="font-medium whitespace-nowrap">Giỏ hàng</span>
+            <span class="font-medium whitespace-nowrap hidden sm:inline"
+              >Giỏ hàng</span
+            >
           </a>
         </div>
       </div>
 
       <nav
-        class="w-[1200px] mx-auto flex justify-center gap-[48px] py-[16px] px-4 sm:px-0 text-[15px] font-[600] text-[#4b5563] border-t border-[#f3f4f6]"
+        class="w-full max-w-[1200px] mx-auto flex justify-center gap-[32px] sm:gap-[48px] py-[12px] sm:py-[16px] px-4 text-[13px] sm:text-[15px] font-[600] text-[#4b5563] border-t border-[#f3f4f6]"
       >
         <a href="index.html" class="hover:text-[#2563eb] transition-colors"
           >Trang chủ</a
@@ -99,14 +101,16 @@
         <a href="danhmuc.html" class="text-[#2563eb]">Sản phẩm</a>
       </nav>
     </header>
-    <main class="w-[1200px] mx-auto px-4 py-[24px]">
+
+    <main class="w-full max-w-[1200px] mx-auto px-4 py-[24px]">
       <div class="text-[13px] text-[#6b7280] mb-[24px]">
         Trang chủ <span class="mx-2">></span
         ><span class="text-[#111827] font-medium">Sản phẩm</span>
       </div>
 
-      <div class="flex gap-[32px]">
-        <aside class="w-[260px] flex-shrink-0">
+      <div class="flex gap-[32px] flex-col sm:flex-row">
+        <!-- Sidebar lọc -->
+        <aside class="w-full sm:w-[260px] sm:flex-shrink-0">
           <div
             class="bg-white p-[20px] border border-[#e5e7eb] rounded-[8px] mb-[20px]"
           >
@@ -167,7 +171,6 @@
               </li>
             </ul>
           </div>
-
           <div
             class="bg-white p-[20px] border border-[#e5e7eb] rounded-[8px] mb-[20px]"
           >
@@ -236,8 +239,10 @@
         </aside>
 
         <div class="flex-1 flex flex-col">
-          <div id="product-grid" class="grid grid-cols-3 gap-[24px]"></div>
-
+          <div
+            id="product-grid"
+            class="grid grid-cols-2 sm:grid-cols-3 gap-[16px] sm:gap-[24px]"
+          ></div>
           <div
             id="pagination"
             class="flex justify-center items-center gap-[8px] mt-[40px] w-full"
@@ -248,7 +253,6 @@
 
     <script>
       const allProducts = [
-        // --- ĐIỆN THOẠI ---
         {
           id: 1,
           name: "Điện thoại Xiaomi Redmi Note 12",
@@ -270,8 +274,6 @@
           category: "dienthoai",
           img: "../images/GalaxyS23.jpg",
         },
-
-        // --- LAPTOP ---
         {
           id: 4,
           name: "Laptop Dell XPS 13",
@@ -293,8 +295,6 @@
           category: "laptop",
           img: "../images/Mac.jpg",
         },
-
-        // --- MÁY TÍNH BẢNG (TABLET) ---
         {
           id: 7,
           name: "iPad Gen 9 64GB",
@@ -316,8 +316,6 @@
           category: "tablet",
           img: "../images/Xiaomi.jpg",
         },
-
-        // --- ĐỒNG HỒ THÔNG MINH ---
         {
           id: 10,
           name: "Apple Watch SE 2022",
@@ -339,8 +337,6 @@
           category: "smartwatch",
           img: "../images/Garmin.jpg",
         },
-
-        // --- PHỤ KIỆN ---
         {
           id: 13,
           name: "Tai nghe Bluetooth Sony",
@@ -367,63 +363,52 @@
       const productGrid = document.getElementById("product-grid");
       const paginationContainer = document.getElementById("pagination");
       let currentProductPage = 1;
-      const itemsPerPage = 6; // Đang set 6 sản phẩm / 1 trang
+      const itemsPerPage = 6;
       let currentFilteredList = [...allProducts];
 
-      // 2. Hàm vẽ sản phẩm ra màn hình (Chỉ vẽ những cái thuộc trang hiện tại)
       function renderProducts() {
         productGrid.innerHTML = "";
         if (currentFilteredList.length === 0) {
           productGrid.innerHTML =
-            '<div class="col-span-3 text-center text-gray-500 py-10 font-medium">Không tìm thấy sản phẩm nào phù hợp!</div>';
+            '<div class="col-span-2 sm:col-span-3 text-center text-gray-500 py-10 font-medium">Không tìm thấy sản phẩm nào phù hợp!</div>';
           paginationContainer.innerHTML = "";
           return;
         }
-
         const startIndex = (currentProductPage - 1) * itemsPerPage;
         const productsToShow = currentFilteredList.slice(
           startIndex,
           startIndex + itemsPerPage,
         );
-
         productsToShow.forEach((item) => {
           productGrid.innerHTML += `
-            <div class="bg-white p-[16px] border border-[#e5e7eb] rounded-[8px] flex flex-col">
-              
-              <a href="chitiet.html?id=${item.id}" class="w-full h-[220px] bg-white rounded-[4px] mb-[16px] flex items-center justify-center p-[10px] cursor-pointer">
-                  <img src="${item.img}" alt="${item.name}" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+            <div class="bg-white p-[12px] sm:p-[16px] border border-[#e5e7eb] rounded-[8px] flex flex-col">
+              <a href="chitiet.html?id=${item.id}" class="w-full h-[160px] sm:h-[220px] bg-white rounded-[4px] mb-[12px] sm:mb-[16px] flex items-center justify-center p-[8px] sm:p-[10px] cursor-pointer">
+                <img src="${item.img}" alt="${item.name}" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
               </a>
-              
-              <h3 class="font-semibold text-[15px] text-[#1f2937] leading-[22px] mb-[4px] line-clamp-2">
-                  <a href="chitiet.html?id=${item.id}" class="hover:text-[#2563eb]">${item.name}</a>
+              <h3 class="font-semibold text-[13px] sm:text-[15px] text-[#1f2937] leading-[20px] sm:leading-[22px] mb-[4px] line-clamp-2">
+                <a href="chitiet.html?id=${item.id}" class="hover:text-[#2563eb]">${item.name}</a>
               </h3>
-              
               <div class="mt-auto">
-                  <div class="text-[#dc2626] font-bold text-[18px] mb-[16px]">${item.price.toLocaleString("vi-VN")} ₫</div>
-                  <button onclick="addToCart('${item.name}', ${item.price}, '${item.img}')" 
-                      class="w-full h-[36px] bg-white border border-[#2563eb] text-[#2563eb] text-[14px] font-medium rounded-[4px] hover:bg-[#2563eb] hover:text-white transition-colors">
-                      Thêm giỏ hàng
-                  </button>
+                <div class="text-[#dc2626] font-bold text-[15px] sm:text-[18px] mb-[10px] sm:mb-[16px]">${item.price.toLocaleString("vi-VN")} ₫</div>
+                <button onclick="addToCart('${item.name}', ${item.price}, '${item.img}')"
+                  class="w-full h-[34px] sm:h-[36px] bg-white border border-[#2563eb] text-[#2563eb] text-[12px] sm:text-[14px] font-medium rounded-[4px] hover:bg-[#2563eb] hover:text-white transition-colors">
+                  Thêm giỏ hàng
+                </button>
               </div>
-            </div>
-          `;
+            </div>`;
         });
         renderPagination();
       }
 
-      // 3. Hàm tạo các nút bấm trang
       function renderPagination() {
         const totalPages = Math.ceil(currentFilteredList.length / itemsPerPage);
-        paginationContainer.innerHTML = ""; // Xóa sạch để vẽ lại
-
-        if (totalPages <= 1) return; // Nếu chỉ có 1 trang thì khỏi vẽ nút
-
-        // Vẽ nút `<` (Trang trước)
+        paginationContainer.innerHTML = "";
+        if (totalPages <= 1) return;
         const prevBtn = document.createElement("button");
         prevBtn.className =
           "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6] disabled:opacity-50 disabled:cursor-not-allowed";
         prevBtn.innerText = "<";
-        prevBtn.disabled = currentProductPage === 1; // Đang ở trang 1 thì khóa nút
+        prevBtn.disabled = currentProductPage === 1;
         prevBtn.onclick = () => {
           if (currentProductPage > 1) {
             currentProductPage--;
@@ -431,19 +416,12 @@
           }
         };
         paginationContainer.appendChild(prevBtn);
-
-        // Vẽ các số 1, 2, 3...
         for (let i = 1; i <= totalPages; i++) {
           const pageBtn = document.createElement("button");
-          if (i === currentProductPage) {
-            // CSS cho trang đang chọn (Màu xanh)
-            pageBtn.className =
-              "w-[36px] h-[36px] bg-[#2563eb] text-white rounded-[4px] flex items-center justify-center";
-          } else {
-            // CSS cho trang bình thường (Màu trắng)
-            pageBtn.className =
-              "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6]";
-          }
+          pageBtn.className =
+            i === currentProductPage
+              ? "w-[36px] h-[36px] bg-[#2563eb] text-white rounded-[4px] flex items-center justify-center"
+              : "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6]";
           pageBtn.innerText = i;
           pageBtn.onclick = () => {
             currentProductPage = i;
@@ -451,13 +429,11 @@
           };
           paginationContainer.appendChild(pageBtn);
         }
-
-        // Vẽ nút `>` (Trang tiếp)
         const nextBtn = document.createElement("button");
         nextBtn.className =
           "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6] disabled:opacity-50 disabled:cursor-not-allowed";
         nextBtn.innerText = ">";
-        nextBtn.disabled = currentProductPage === totalPages; // Ở trang cuối thì khóa nút
+        nextBtn.disabled = currentProductPage === totalPages;
         nextBtn.onclick = () => {
           if (currentProductPage < totalPages) {
             currentProductPage++;
@@ -467,7 +443,6 @@
         paginationContainer.appendChild(nextBtn);
       }
 
-      // 4. Hàm xử lý Lọc
       function filterProducts() {
         const checkedCategories = Array.from(
           document.querySelectorAll(".filter-checkbox:checked"),
@@ -475,12 +450,10 @@
         const selectedPrice = document.querySelector(
           ".filter-radio:checked",
         ).value;
-
         currentFilteredList = allProducts.filter((product) => {
           const matchCategory =
             checkedCategories.length === 0 ||
             checkedCategories.includes(product.category);
-
           let matchPrice = true;
           if (selectedPrice === "under5") matchPrice = product.price < 5000000;
           if (selectedPrice === "5to10")
@@ -488,85 +461,154 @@
           if (selectedPrice === "10to20")
             matchPrice = product.price > 10000000 && product.price <= 20000000;
           if (selectedPrice === "over20") matchPrice = product.price > 20000000;
-
           return matchCategory && matchPrice;
         });
-
-        // QUAN TRỌNG: Lọc xong mảng mới thì phải Reset về trang 1
         currentProductPage = 1;
         renderProducts();
       }
 
-      // 5. Gắn sự kiện lắng nghe click
       document
         .querySelectorAll(".filter-checkbox, .filter-radio")
         .forEach((input) => {
           input.addEventListener("change", filterProducts);
         });
-
-      // Mở web lên là chạy lọc để vẽ dữ liệu
       filterProducts();
     </script>
 
-    <footer class="footer">
-      <div class="footer-col">
-        <div class="logo">TechStore</div>
-        <p>Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Thông tin</h4>
-        <a href="#">Giới thiệu</a>
-        <a href="#">Tuyển dụng</a>
-        <a href="#">Chính sách bảo mật</a>
-      </div>
-      <div class="footer-col">
-        <h4>Hỗ trợ khách hàng</h4>
-        <a href="#">Hướng dẫn mua hàng</a>
-        <a href="#">Chính sách đổi trả</a>
-        <a href="#">Chính sách bảo hành</a>
-      </div>
-      <div class="footer-col">
-        <h4>Liên hệ</h4>
-        <p>Hotline: 1900 xxxx</p>
-        <p>Email: cskh@techstore.vn</p>
-        <p>Hà Nội, Việt Nam</p>
-      </div>
-    </footer>
-    <style>
-      .footer {
+    <footer
+      style="
         background: #fff;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         max-width: 2560px;
         margin: 40px auto 0;
-        border-top: 1px solid var(--border-color);
-        padding-top: 40px;
-        padding-bottom: 40px;
-      }
-      .footer-col {
-        flex: 1;
-        padding: 0 20px;
-      }
-      .footer-col .logo {
-        margin-bottom: 16px;
-      }
-      .footer-col p,
-      .footer-col a {
-        display: block;
-        font-size: 13px;
-        color: var(--text-muted);
-        margin-bottom: 10px;
-      }
-      .footer-col a:hover {
-        color: var(--text-blue);
-      }
-      .footer-col h4 {
-        font-size: 15px;
-        font-weight: 600;
-        margin-bottom: 16px;
-        color: var(--text-main);
-      }
-    </style>
+        border-top: 1px solid #e5e7eb;
+        padding: 40px 20px;
+        gap: 20px;
+      "
+    >
+      <div style="flex: 1; min-width: 160px; padding: 0 16px">
+        <div
+          style="
+            font-size: 24px;
+            font-weight: 800;
+            color: #1d4ed8;
+            margin-bottom: 16px;
+          "
+        >
+          TechStore
+        </div>
+        <p style="font-size: 13px; color: #6b7280">
+          Hệ thống bán lẻ thiết bị điện tử chính hãng hàng đầu.
+        </p>
+      </div>
+      <div style="flex: 1; min-width: 140px; padding: 0 16px">
+        <h4
+          style="
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1f2937;
+          "
+        >
+          Thông tin
+        </h4>
+        <a
+          href="#"
+          style="
+            display: block;
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 10px;
+          "
+          >Giới thiệu</a
+        >
+        <a
+          href="#"
+          style="
+            display: block;
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 10px;
+          "
+          >Tuyển dụng</a
+        >
+        <a
+          href="#"
+          style="
+            display: block;
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 10px;
+          "
+          >Chính sách bảo mật</a
+        >
+      </div>
+      <div style="flex: 1; min-width: 160px; padding: 0 16px">
+        <h4
+          style="
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1f2937;
+          "
+        >
+          Hỗ trợ khách hàng
+        </h4>
+        <a
+          href="#"
+          style="
+            display: block;
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 10px;
+          "
+          >Hướng dẫn mua hàng</a
+        >
+        <a
+          href="#"
+          style="
+            display: block;
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 10px;
+          "
+          >Chính sách đổi trả</a
+        >
+        <a
+          href="#"
+          style="
+            display: block;
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 10px;
+          "
+          >Chính sách bảo hành</a
+        >
+      </div>
+      <div style="flex: 1; min-width: 140px; padding: 0 16px">
+        <h4
+          style="
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1f2937;
+          "
+        >
+          Liên hệ
+        </h4>
+        <p style="font-size: 13px; color: #6b7280; margin-bottom: 10px">
+          Hotline: 1900 xxxx
+        </p>
+        <p style="font-size: 13px; color: #6b7280; margin-bottom: 10px">
+          Email: cskh@techstore.vn
+        </p>
+        <p style="font-size: 13px; color: #6b7280; margin-bottom: 10px">
+          Hà Nội, Việt Nam
+        </p>
+      </div>
+    </footer>
     <script src="../js/common.js"></script>
   </body>
 </html>

@@ -299,6 +299,7 @@ body {
   font-weight: 600;
   font-size: 14px;
   color: var(--text-main);
+  white-space: nowrap;
 }
 
 /* === SUMMARY BOX === */
@@ -424,4 +425,176 @@ body {
   font-weight: 600;
   margin-bottom: 16px;
   color: var(--text-main);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+/* Tablet lớn: 1024px */
+@media (max-width: 1024px) {
+  .header {
+    padding: 16px 24px 0;
+  }
+  .search-bar {
+    width: 260px;
+  }
+  .checkout-grid {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+  }
+  .step-line {
+    width: 80px;
+  }
+}
+
+/* Tablet: 768px */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px 0;
+  }
+  .header-main {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  .search-bar {
+    order: 3;
+    width: 100%;
+  }
+  .user-actions {
+    gap: 16px;
+  }
+  .header-nav {
+    gap: 16px;
+    font-size: 13px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  .checkout-wrapper {
+    padding: 0 16px;
+    margin: 16px auto 40px;
+  }
+  .breadcrumb {
+    margin-bottom: 24px;
+  }
+  .stepper {
+    margin-bottom: 28px;
+  }
+  .step-line {
+    width: 60px;
+    margin: 0 8px;
+  }
+  .step {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  /* Stack 2 cột thành 1 cột */
+  .checkout-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Summary box lên trước form trên mobile */
+  .checkout-right {
+    order: -1;
+  }
+
+  .box {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .summary-box {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .radio-box {
+    padding: 14px 16px;
+  }
+  .radio-title {
+    font-size: 13px;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    padding: 24px 16px;
+    gap: 20px;
+  }
+  .footer-col {
+    flex: 1 1 calc(50% - 16px);
+    padding: 0;
+  }
+}
+
+/* Mobile: 480px */
+@media (max-width: 480px) {
+  .header-nav {
+    gap: 12px;
+    font-size: 12px;
+  }
+  .stepper {
+    gap: 4px;
+  }
+  .step-line {
+    width: 28px;
+    margin: 0 4px;
+  }
+  .step {
+    font-size: 11px;
+    gap: 4px;
+  }
+  .circle {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .box {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .summary-box {
+    padding: 16px;
+  }
+
+  .radio-box {
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .radio-price {
+    align-self: flex-end;
+  }
+
+  .place-order-btn {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+  .summary-row.total span:first-child {
+    font-size: 14px;
+  }
+  .total-price {
+    font-size: 18px;
+  }
+
+  .footer-col {
+    flex: 1 1 100%;
+  }
 }
