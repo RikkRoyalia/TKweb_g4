@@ -33,7 +33,7 @@
       class="sticky top-0 z-50 bg-white border-b border-[#e5e7eb] pt-[20px]"
     >
       <div
-        class="w-full max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-y-3 pb-[20px] px-4"
+        class="w-full max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-y-3 px-4"
       >
         <!-- Logo -->
         <a
@@ -103,7 +103,7 @@
 
       <!-- Nav -->
       <nav
-        class="w-full max-w-[1200px] mx-auto flex justify-center gap-[32px] sm:gap-[48px] py-[12px] sm:py-[16px] px-4 text-[13px] sm:text-[15px] font-[600] text-[#4b5563] border-t border-[#f3f4f6]"
+        class="w-full max-w-[1200px] mx-auto flex justify-center gap-[32px] sm:gap-[48px] py-[12px] sm:py-[16px] px-4 text-[13px] sm:text-[15px] font-[600] text-[#4b5563]"
       >
         <a href="index.html" class="text-[#2563eb] transition-colors"
           >Trang chủ</a
@@ -217,6 +217,23 @@
               </button>
             </div>
           </div>
+          <div class="product-card">
+            <span class="discount-badge">20%</span>
+            <a href="#" class="product-img">
+              <img src="../images/Ipad2.jpg" alt="Ipad Air 11" />
+            </a>
+            <h3 class="product-title"><a href="#">Ipad Air 11</a></h3>
+            <div class="product-bottom">
+              <div class="old-price">10.000.000 đ</div>
+              <div class="new-price">8.000.000 đ</div>
+              <button
+                class="add-to-cart-btn"
+                onclick="addToCart('Ipad Air 11', 8000000, 'Ipad2.jpg')"
+              >
+                Thêm giỏ hàng
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -245,6 +262,27 @@
                 class="add-to-cart-btn"
                 onclick="
                   addToCart('iPhone 16 Pro Max 256GB', 30990000, 'iphone.jpg')
+                "
+              >
+                Thêm giỏ hàng
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <span class="discount-badge">15%</span>
+            <a href="#" class="product-img">
+              <img src="../images/samsung1.jpg" alt="Samsung Galaxy S23" />
+            </a>
+            <h3 class="product-title">
+              <a href="#">Samsung Galaxy S23 Ultra</a>
+            </h3>
+            <div class="product-bottom">
+              <div class="old-price">25.990.000 đ</div>
+              <div class="new-price">22.000.000 đ</div>
+              <button
+                class="add-to-cart-btn"
+                onclick="
+                  addToCart('Samsung Galaxy S23', 22000000, 'samsung1.jpg')
                 "
               >
                 Thêm giỏ hàng
