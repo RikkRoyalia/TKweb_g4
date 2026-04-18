@@ -351,7 +351,7 @@
 
       const productGrid = document.getElementById("product-grid");
       const paginationContainer = document.getElementById("pagination");
-      let currentPage = 1;
+      let currentProductPage = 1;
       const itemsPerPage = 6; // Đang set 6 sản phẩm / 1 trang
       let currentFilteredList = [...allProducts];
 
@@ -365,7 +365,7 @@
           return;
         }
 
-        const startIndex = (currentPage - 1) * itemsPerPage;
+        const startIndex = (currentProductPage - 1) * itemsPerPage;
         const productsToShow = currentFilteredList.slice(
           startIndex,
           startIndex + itemsPerPage,
@@ -408,10 +408,10 @@
         prevBtn.className =
           "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6] disabled:opacity-50 disabled:cursor-not-allowed";
         prevBtn.innerText = "<";
-        prevBtn.disabled = currentPage === 1; // Đang ở trang 1 thì khóa nút
+        prevBtn.disabled = currentProductPage === 1; // Đang ở trang 1 thì khóa nút
         prevBtn.onclick = () => {
-          if (currentPage > 1) {
-            currentPage--;
+          if (currentProductPage > 1) {
+            currentProductPage--;
             renderProducts();
           }
         };
@@ -420,7 +420,7 @@
         // Vẽ các số 1, 2, 3...
         for (let i = 1; i <= totalPages; i++) {
           const pageBtn = document.createElement("button");
-          if (i === currentPage) {
+          if (i === currentProductPage) {
             // CSS cho trang đang chọn (Màu xanh)
             pageBtn.className =
               "w-[36px] h-[36px] bg-[#2563eb] text-white rounded-[4px] flex items-center justify-center";
@@ -431,7 +431,7 @@
           }
           pageBtn.innerText = i;
           pageBtn.onclick = () => {
-            currentPage = i;
+            currentProductPage = i;
             renderProducts();
           };
           paginationContainer.appendChild(pageBtn);
@@ -442,10 +442,10 @@
         nextBtn.className =
           "w-[36px] h-[36px] border border-[#d1d5db] rounded-[4px] flex items-center justify-center text-[#4b5563] hover:bg-[#f3f4f6] disabled:opacity-50 disabled:cursor-not-allowed";
         nextBtn.innerText = ">";
-        nextBtn.disabled = currentPage === totalPages; // Ở trang cuối thì khóa nút
+        nextBtn.disabled = currentProductPage === totalPages; // Ở trang cuối thì khóa nút
         nextBtn.onclick = () => {
-          if (currentPage < totalPages) {
-            currentPage++;
+          if (currentProductPage < totalPages) {
+            currentProductPage++;
             renderProducts();
           }
         };
@@ -478,7 +478,7 @@
         });
 
         // QUAN TRỌNG: Lọc xong mảng mới thì phải Reset về trang 1
-        currentPage = 1;
+        currentProductPage = 1;
         renderProducts();
       }
 
